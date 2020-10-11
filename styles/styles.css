@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  padding: 0 3rem;
+  background-color: #A2E0DF;
+}
+.navbar h1 {
+  font-family: "Dancing script";
+  color: #145C5B;
+  font-size: 2.4rem;
+}
+.navbar__menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar__menu__item {
+  font-family: "Raleway";
+  font-size: 1.3rem;
+  padding: 0 2rem;
+  color: #145C5B;
+  list-style: none;
+}
+.navbar__menu__item a {
+  text-decoration: none;
+  color: #145C5B;
+  cursor: pointer;
+}
+.navbar__menu__item a:visited a:visited a:active {
+  color: #145C5B;
+}
+
+.intro {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+h2 {
+  position: absolute;
+  left: 27%;
+  top: 75%;
+  color: #EBE1B2;
+  font-family: "Raleway";
+  font-style: italic;
+  font-size: 3rem;
+}
+
+video {
+  width: 100%;
+}
