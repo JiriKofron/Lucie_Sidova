@@ -14,22 +14,61 @@
                 <li class="navbar__menu__item"><a href="#">O mně</a></li>
                 <li class="navbar__menu__item"><a href="#">Kontakt</a></li>
             </ul>
-        </nav> 
-        <header id="app" class="intro">
-        <button class="intro__menu-btn" v-on:click="toggleMenu">Menu</button>
-        <div class="intro__popmenu" v-bind:style="{'display' : (isActive ? 'none' : 'block')}">
-            <ul class="intro__popmenu__menu">
-                <button class="intro__menu-btn" v-on:click="toggleMenu">{{button.text}}</button>
+        </nav>
+        <nav class="navbar-small" id="app">
+        <button class="navbar--small__menu-btn" v-on:click="toggleMenu">Menu</button>
+        <div class="navbar--small__popmenu" v-bind:style="{'display' : (isActive ? 'none' : 'block')}">
+            <ul class="navbar--small__popmenu__menu">
+                <button class="navbar--small__menu-btn" v-on:click="toggleMenu">{{button.text}}</button>
                 <li class="menu__item"><a href="#">Služby</a></li>
                 <li class="menu__item"><a href="#">O mně</a></li>
                 <li class="menu__item"><a href="#">Kontakt</a></li>
             </ul>
         </div>
+    </nav>
+        <header class="intro">
         <h1><span class="intro__void-first">Lucie</span><span class="intro__void-second">Šídová</span></h1>   
         <h2>psychoterapie | poradenství | koučink</h2>
         <!--<video autoplay muted loop src="src/vid/Sea_waves.mp4"
         type="video/mp4" ></video> video pro větší obrazovky--> 
         </header>
+        <main>
+            <section class="text">
+                <p>
+                    <strong>Věnuji se individuální terapii, poradenství a koučování. </strong>Pracuji s především s dospělými lidmi. Ve své práci využívám zejména metodu Biosyntézy a psychodynamický přístup. Věnuji se různým tématům jako jsou např. osobní rozvoj a růst, náročné životní situace, traumatické zkušenosti, vztahy, rodinné problémy, sexualitě či tématům spojeným s domácím a sexuálním násilím.
+                </p>
+            </section>
+            <section class="services">
+                <div class="services__tile">
+                    <h3>Psychoterapie</h3>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    </p>
+                </div>
+                <div class="services__tile">
+                    <h3>Krizová intervence</h3>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    </p>
+                </div>
+                <div class="services__tile">
+                    <h3>Koučink</h3>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    </p>
+                </div>
+                <div class="services__tile">
+                    <h3>Poradenství</h3>
+                    <hr>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    </p>
+                </div>
+            </section>
+        </main>
         <script src="index.js"></script>
     </body>
 </html>

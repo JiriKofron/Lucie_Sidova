@@ -1,0 +1,66 @@
+@use 'intro';
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top:-5rem;
+    width: 100%;
+
+    p {
+        font-family: intro.$raleway;
+        font-size: 1.3rem;
+        line-height: 1.5;
+        padding: 1.5rem;
+        
+    }
+
+    section.text {
+        background-color: intro.$sand;
+        padding: 3.5rem 0;
+        clip-path: polygon(0 0, 100% 2rem, 100% 100%, 0% 100%);
+        color: intro.$text-color;
+
+    }
+
+    section.services{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: intro.$light-blue;
+        clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
+        margin-top: -2rem;
+        padding-top: 6rem;
+
+        .services__tile {
+            background-color: intro.$dark-pink;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem;
+            border-radius: 1rem;
+
+            h3 {
+                text-align: center;
+                font-family: intro.$dancing;
+                font-weight: 300;
+                font-size:3rem;
+                color: white;
+            }
+
+            hr {
+                width: 80%;
+                border: 1px solid white;
+            }
+
+            p {
+                color: white;
+                font-size: 1.2rem
+            }
+
+        }
+    }
+
+}

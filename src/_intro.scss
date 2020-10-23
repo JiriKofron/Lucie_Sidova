@@ -57,28 +57,30 @@ body {
     }
 }
 
-.intro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    height: 90vh;
-    max-height: 40rem;
-    overflow: hidden;
-    background: $light-blue;
-
+.navbar--small{
+    
     &__menu-btn {
-        position: absolute;
+        position: fixed;
         display: block;
         left: 70%;
         top: 1.5rem;
+        z-index: 1000;
+
+        font-family: $raleway;
+        font-size: 1.3rem;
+        border: none;
+        background-color: $dark-pink;
+        color: white;
+        padding: .5rem;
+        cursor: pointer;
     }
 
     &__popmenu {
         display: none;
-        position: absolute;
+        position: fixed;
         width: 100%;
         height: 65%;
+        max-height: 25rem;
         background-color: rgba($gold, 1);
         z-index: 100;
         clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
@@ -105,6 +107,19 @@ body {
             line-height: 5rem;
         }
     }
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 95vh;
+    max-height: 30rem;
+    max-height: 40rem;
+    overflow: hidden;
+    background: $light-blue;
+
 
     h1 {
         display: flex;
@@ -114,6 +129,7 @@ body {
         font-size: 5.6rem;
         padding: 0 -2rem;
         text-align: center;
+        color: $text-color;
     }
 
     &__void {
@@ -145,16 +161,6 @@ body {
         // background-color: rgba(255,255,255,0.2);
     }
 
-}
-
-.intro__menu-btn {
-    font-family: $raleway;
-    font-size: 1.3rem;
-    border: none;
-    background-color: $dark-pink;
-    color: white;
-    padding: .5rem;
-    cursor: pointer;
 }
 
 video {
