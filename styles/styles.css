@@ -92,7 +92,7 @@ body {
   max-height: 30rem;
   max-height: 40rem;
   overflow: hidden;
-  background: no-repeat url("/src/img/Background_still_sm2.png");
+  background: no-repeat url("../src/img/Background_still_sm2.png");
   background-position: center;
   background-size: cover;
 }
