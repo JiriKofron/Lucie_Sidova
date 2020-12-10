@@ -7,6 +7,12 @@ main {
     margin-top:-5rem;
     width: 100%;
 
+    h2 {
+        font-family: intro.$dancing;
+        font-size: 3.5rem;
+        text-align: center;
+    }
+
     p {
         font-family: intro.$raleway;
         font-size: 1.3rem;
@@ -32,32 +38,52 @@ main {
         clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
         margin-top: -2rem;
         padding-top: 6rem;
+        padding-bottom: 3rem;
 
         .services__tile {
-            background-color: intro.$dark-pink;
+            background-color: intro.$light-blue;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 1rem;
+            width: 90%;
             border-radius: 1rem;
 
+            &__h3container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
             h3 {
-                text-align: center;
                 font-family: intro.$dancing;
                 font-weight: 300;
-                font-size:3rem;
-                color: white;
+                font-size:2.5rem;
+                margin: 1rem 0;
+                color: intro.$text-color;
+                flex-basis: 70%;
+            }
+
+            span {
+                display: block;
+                align-self: flex-end;
+                color: intro.$dark-pink;
+                font-family: intro.$raleway;
+                font-size: 4rem;
+                flex-basis: 20%;
+                cursor: pointer;
             }
 
             hr {
+                flex-basis: 100%;
                 width: 80%;
                 border: 1px solid white;
             }
+        }
 
             p {
+                display: none;
                 color: white;
-                font-size: 1.2rem
+                font-size: 1.2rem;
+                padding: 1rem 2rem;
             }
 
         }

@@ -92,9 +92,13 @@ body {
   max-height: 30rem;
   max-height: 40rem;
   overflow: hidden;
-  background: #A2E0DF;
+  background: no-repeat url("/src/img/Background_still_sm2.png");
+  background-position: center;
+  background-size: cover;
 }
 .intro h1 {
+  width: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   top: 10%;
@@ -127,9 +131,9 @@ body {
   font-size: 1.6rem;
   line-height: 2.2rem;
 }
-
-video {
+.intro__background_video {
   width: 100%;
+  display: none;
 }
 
 main {
@@ -138,6 +142,11 @@ main {
   justify-content: space-evenly;
   margin-top: -5rem;
   width: 100%;
+}
+main h2 {
+  font-family: "Dancing script";
+  font-size: 3.5rem;
+  text-align: center;
 }
 main p {
   font-family: "Raleway";
@@ -160,28 +169,46 @@ main section.services {
   clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
   margin-top: -2rem;
   padding-top: 6rem;
+  padding-bottom: 3rem;
 }
 main section.services .services__tile {
-  background-color: #CC85BB;
+  background-color: #A2E0DF;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1rem;
+  width: 90%;
   border-radius: 1rem;
 }
-main section.services .services__tile h3 {
-  text-align: center;
+main section.services .services__tile__h3container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+main section.services .services__tile__h3container h3 {
   font-family: "Dancing script";
   font-weight: 300;
-  font-size: 3rem;
-  color: white;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: #145C5B;
+  flex-basis: 70%;
 }
-main section.services .services__tile hr {
+main section.services .services__tile__h3container span {
+  display: block;
+  align-self: flex-end;
+  color: #CC85BB;
+  font-family: "Raleway";
+  font-size: 4rem;
+  flex-basis: 20%;
+  cursor: pointer;
+}
+main section.services .services__tile__h3container hr {
+  flex-basis: 100%;
   width: 80%;
   border: 1px solid white;
 }
 main section.services .services__tile p {
+  display: none;
   color: white;
   font-size: 1.2rem;
+  padding: 1rem 2rem;
 }

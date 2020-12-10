@@ -1,74 +1,108 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Lucie Šídová | psychoterapie, poradenství</title>
-        <link rel="stylesheet" href="styles/styles.css">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-        
-    </head>
-    <body>
-        <nav class="navbar"> 
-            <h1>Lucie Šídová</h1>
-            <ul class="navbar__menu">
-                <li class="navbar__menu__item"><a href="#">Služby</a></li>
-                <li class="navbar__menu__item"><a href="#">O mně</a></li>
-                <li class="navbar__menu__item"><a href="#">Kontakt</a></li>
-            </ul>
-        </nav>
-        <nav class="navbar-small" id="app">
-        <button class="navbar--small__menu-btn" v-on:click="toggleMenu">Menu</button>
-        <div class="navbar--small__popmenu" v-bind:style="{'display' : (isActive ? 'none' : 'block')}">
-            <ul class="navbar--small__popmenu__menu">
-                <button class="navbar--small__menu-btn" v-on:click="toggleMenu">{{button.text}}</button>
-                <li class="menu__item"><a href="#">Služby</a></li>
-                <li class="menu__item"><a href="#">O mně</a></li>
-                <li class="menu__item"><a href="#">Kontakt</a></li>
-            </ul>
-        </div>
+  <head>
+    <title>Lucie Šídová | psychoterapie, poradenství</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/flickity.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"
+    ></script>
+    <script type="text/javascript" src="vendor/flickity.pkgd.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Lucie Šídová</h1>
+      <ul class="navbar__menu">
+        <li class="navbar__menu__item"><a href="#">Služby</a></li>
+        <li class="navbar__menu__item"><a href="#">O mně</a></li>
+        <li class="navbar__menu__item"><a href="#">Kontakt</a></li>
+      </ul>
     </nav>
-        <header class="intro">
-        <h1><span class="intro__void-first">Lucie</span><span class="intro__void-second">Šídová</span></h1>   
-        <h2>psychoterapie | poradenství | koučink</h2>
-        <!--<video autoplay muted loop src="src/vid/Sea_waves.mp4"
-        type="video/mp4" ></video> video pro větší obrazovky--> 
-        </header>
-        <main>
-            <section class="text">
-                <p>
-                    <strong>Věnuji se individuální terapii, poradenství a koučování. </strong>Pracuji s především s dospělými lidmi. Ve své práci využívám zejména metodu Biosyntézy a psychodynamický přístup. Věnuji se různým tématům jako jsou např. osobní rozvoj a růst, náročné životní situace, traumatické zkušenosti, vztahy, rodinné problémy, sexualitě či tématům spojeným s domácím a sexuálním násilím.
-                </p>
-            </section>
-            <section class="services">
-                <div class="services__tile">
-                    <h3>Psychoterapie</h3>
-                    <hr>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </p>
-                </div>
-                <div class="services__tile">
-                    <h3>Krizová intervence</h3>
-                    <hr>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </p>
-                </div>
-                <div class="services__tile">
-                    <h3>Koučink</h3>
-                    <hr>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </p>
-                </div>
-                <div class="services__tile">
-                    <h3>Poradenství</h3>
-                    <hr>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    </p>
-                </div>
-            </section>
-        </main>
-        <script src="index.js"></script>
-    </body>
+    <nav class="navbar-small" id="app">
+      <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
+        Menu
+      </button>
+      <div
+        class="navbar--small__popmenu"
+        v-bind:style="{'display' : (isActive ? 'none' : 'block')}"
+      >
+        <ul class="navbar--small__popmenu__menu">
+          <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
+            {{button.text}}
+          </button>
+          <li class="menu__item"><a href="#">Služby</a></li>
+          <li class="menu__item"><a href="#">O mně</a></li>
+          <li class="menu__item"><a href="#">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header class="intro">
+      <h1>
+        <span class="intro__void-first">Lucie</span
+        ><span class="intro__void-second">Šídová</span>
+      </h1>
+      <h2>psychoterapie | poradenství | koučink</h2>
+      <video class="intro__background_video" autoplay muted loop src="src/vid/Background_video.mp4"
+        type="video/mp4" ></video>
+    </header>
+    <main>
+      <section class="text">
+        <h2><em>Kdy mě oslovit?</em></h2>
+        <p>
+          <strong> Kdykoliv, kdy Vám není dobře po psychické stránce. 
+            Věnuji se individuální terapii, poradenství a koučování. </strong
+          >Ve své práci využívám zejména
+          metodu Biosyntézy a psychodynamický přístup. Pomohu vám řešit vztahové problémy s okolím, ale také vaše vnitřní konflikty a traumata. 
+          Věnuji se různým tématům jako jsou např. osobní rozvoj a růst, náročné životní situace,
+          traumatické zkušenosti, vztahy, rodinné problémy, sexualitě či tématům
+          spojeným s domácím a sexuálním násilím.
+        </p>
+      </section>
+      <section class="services" id="services">
+        <services-tile
+        v-for="item in items"
+        v-bind:key="item.id"
+        v-bind:header="item.header"
+        v-bind:message="item.message"
+        ></services-tile>
+      </section>
+      <section class="kontakt">
+        <!-- dodělat nodemailer a přidat ho sem-->
+
+      </section>
+      <section class="about">
+        <!-- Použít text o mě a dodat nějak CV s daty, zas udělat + u těch jednotlivých sekcí a udělat to pomocí  časové osy, pomocí Vue?-->
+      </section>
+    </main>
+    <footer></footer>
+
+    <!-- Flickity carusel
+    <section class="carousel">
+        <div class="main-carousel" id="testimonials">
+            <testimonials
+            v-for="item in reviews"
+            v-bind:testimonial="item"
+            v-bind:key="item.id"
+            >
+            </testimonials>
+        </div>
+    </section> 
+
+    <section class="carousel-container">
+      <div class="main-carousel" id="review-display">
+        <review-display
+          v-for="item in reviews"
+          v-bind:review="item"
+          v-bind:key="item.id"
+        >
+        </review-display>
+      </div>
+    </section> -->
+
+    <script src="index.js"></script>
+    <script src="flickity.js"></script>
+  </body>
 </html>
