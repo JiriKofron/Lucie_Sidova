@@ -53,3 +53,27 @@ const services = new Vue({
         ],
     }
 });
+
+const form = new Vue({
+    el:'#form',
+    data() {
+        return {
+            contact: {
+                name: "",
+                email: "",
+                message: ""
+                }
+            }
+    }, 
+    methods: {
+        submitForm: async function(){
+            console.log(this.contact.name, this.contact.email, this.contact.message);
+            try {
+                let response = await axios.post('http://localhost:4000/submit', this.contact);
+                console.log(response);
+            } catch(err){
+                console.log(err);
+            }
+        }
+    }
+})

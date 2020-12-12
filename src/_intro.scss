@@ -115,10 +115,10 @@ body {
     align-items: center;
     position: relative;
     height: 95vh;
-    max-height: 30rem;
+    min-height: 20rem;
     max-height: 40rem;
     overflow: hidden;
-    background: no-repeat url("/src/img/Background_still_sm2.png");
+    background: no-repeat url("../src/img/Background_still_sm2.png");
     background-position: center;
     background-size: cover;
 
