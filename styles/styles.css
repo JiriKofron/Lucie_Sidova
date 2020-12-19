@@ -168,8 +168,8 @@ main section.services {
   background-color: #A2E0DF;
   clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
   margin-top: -2rem;
-  padding-top: 6rem;
-  padding-bottom: 3rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 main section.services .services__tile {
   background-color: #A2E0DF;
@@ -213,8 +213,90 @@ main section.services .services__tile p {
   padding: 1rem 2rem;
 }
 
+.kontakt {
+  background-color: #F2EFDF;
+  clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
+  padding-top: 3rem;
+  margin-top: -2rem;
+  padding-bottom: 3rem;
+}
+.kontakt__details {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kontakt__details__phone, .kontakt__details__email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.kontakt__details__phone i, .kontakt__details__email i {
+  font-size: 4rem;
+  color: #CC85BB;
+}
+.kontakt__details__phone h3, .kontakt__details__email h3 {
+  font-size: 1.6rem;
+  color: #145C5B;
+}
+.kontakt__details__phone {
+  margin-bottom: 2rem;
+}
 .kontakt__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 1rem;
+}
+.kontakt__form h2 {
+  color: #145C5B;
+  margin-bottom: 0;
+}
+.kontakt__form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.kontakt__form__container__field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 90%;
+  font-family: "Raleway";
+  margin: 2rem 0 1rem 1rem;
+  color: #145C5B;
+}
+.kontakt__form__container__field label {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.kontakt__form__container__field input, .kontakt__form__container__field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.6rem 0 0.3rem 0;
+  font-family: inherit;
+  font-size: 1.4rem;
+  background-color: rgba(235, 225, 178, 0.4);
+  border: 0;
+  border-bottom: 0.1rem solid #145C5B;
+}
+.kontakt__form button {
+  align-self: center;
+  width: 60%;
+  background-color: #CC85BB;
+  color: white;
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  border: 0;
+}
+.kontakt__form__success {
+  display: flex;
+  flex-direction: column;
+  background-color: #A2E0DF;
+  margin-top: 2rem;
 }

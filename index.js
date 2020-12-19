@@ -58,22 +58,28 @@ const form = new Vue({
     el:'#form',
     data() {
         return {
+            errors: [],
             contact: {
                 name: "",
                 email: "",
                 message: ""
-                }
+                },
+            isHidden: true,    
             }
     }, 
     methods: {
+        
         submitForm: async function(){
             console.log(this.contact.name, this.contact.email, this.contact.message);
-            try {
+            try{
                 let response = await axios.post('http://localhost:4000/submit', this.contact);
                 console.log(response);
+                this.contact = "";
+                this.isHidden = false
             } catch(err){
                 console.log(err);
             }
-        }
-    }
-})
+        },
+
+}
+});

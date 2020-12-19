@@ -28,7 +28,7 @@
  }) */
 
 
-// Toto je funkční verze flickity 
+// Toto je funkční verze flickity!!!! 
 //  Vue.component('review-display', {
 //     props: ['review'],
 //     template: `<div class="carousel-cell">

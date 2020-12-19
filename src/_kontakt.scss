@@ -1,8 +1,105 @@
+@use "intro";
+
 .kontakt {
+
+    background-color: intro.$sand;
+    clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
+    padding-top: 3rem;
+    margin-top: -2rem;
+    padding-bottom: 3rem;
+
+    &__details {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__phone, &__email {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                font-size: 4rem;
+                color: intro.$dark-pink
+            }
+
+            h3 {
+                font-size: 1.6rem;
+                color: intro.$text-color;
+            }
+        }
+
+        &__phone {
+            margin-bottom: 2rem;
+        }
+    }
 
     &__form {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin-top: 1rem;
+
+        h2 {
+            color: intro.$text-color;
+            margin-bottom: 0;
+        }
+
+        &__container {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          &__field {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              width: 90%;
+              font-family: intro.$raleway;
+              margin: 2rem 0 1rem 1rem;
+              color: intro.$text-color;
+
+              label {
+                  align-self: flex-start;
+                  margin-bottom: .5rem;
+                  font-size: 1.2rem;
+              }
+
+              input, textarea {
+                  box-sizing: border-box;
+                  width: 100%;
+                  padding: 1.6rem 0 .3rem 0;
+                  font-family: inherit;
+                  font-size: 1.4rem;
+                  background-color: rgba(intro.$gold, .4);
+                  border: 0;
+                  border-bottom: .1rem solid intro.$text-color;
+              }
+          }
+        }
+
+        button {
+            align-self: center;
+            width: 60%;
+            background-color: intro.$dark-pink;
+            color: white;
+            font-family: inherit;
+            font-size: 1.5rem;
+            padding: .5rem 0;
+            border: 0;
+        }
+
+        &__success {
+            display: flex;
+            flex-direction: column;
+            background-color: intro.$light-blue;
+            margin-top: 2rem;
+        }
+
+
     }
 }
