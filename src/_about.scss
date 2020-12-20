@@ -1,0 +1,36 @@
+@use "intro";
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: intro.$sand;
+    clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
+    margin: -2rem 0;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    color: intro.$text-color;
+    
+    p {
+        margin: 0;
+    }
+    &__curriculum {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: intro.$raleway;
+        font-size: 1.3rem;
+
+        h3 {
+            display: block;
+            padding: 0 1rem;
+        }
+
+        ul {
+            li {
+                padding: .3rem 1rem;
+            }
+        }
+    }
+    
+}

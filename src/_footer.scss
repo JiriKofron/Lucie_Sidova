@@ -1,0 +1,11 @@
+@use "intro";
+
+footer {
+    background-color: intro.$gold;
+    border-radius: 2rem 2rem 0 0;
+    position: absolute;
+
+    address {
+        padding: 1.5rem;
+    }
+}

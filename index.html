@@ -4,7 +4,8 @@
     <title>Lucie Šídová | psychoterapie, poradenství</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/flickity.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="vendor/css/all.css" />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"> -->
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"
@@ -86,11 +87,6 @@
         <form action="/submit" @submit.prevent="submitForm" method="post" class="kontakt__form" id="form">
           <h2>Napište mi</h2>
           <div class="kontakt__form__container" v-if="isHidden">
-          <div class="error" v-if="errors.length">
-            <ul>
-              <li v-for="error in errors">{{error}}</li>
-          </ul>    
-          </div>
           <div class="kontakt__form__container__field">
             <label for="name">Jméno</label>
             <input type="text" id="name" name="name" v-model="contact.name" required>
@@ -112,41 +108,52 @@
             <p>A je to! Udělali jste první krok. Nyní prosím o chvíli strpení, ozvu se Vám co nejdříve.</p></div>
         </form>
       </section>
-      <section class="kodex">
-
-      </section>
       <section class="cenik">
-        
+        <h2>Ceník</h2>
+        <p>Terapie je možná i online. Nicméně preferuji osobní setkání.</p>
+        <p><span>800,- Kč</span>(50 minut)</p>
       </section>
       <section class="about">
-        <!-- Použít text o mě a dodat nějak CV s daty, zas udělat + u těch jednotlivých sekcí a udělat to pomocí  časové osy, pomocí Vue?-->
+        <h2>O mně</h2>
+        <p>Jako lektorka přednáším téma sexuality lidí s hendikepem, seniorů a seniorek v sociálních, zdravotních a školských zařízeních.</p>
+        <p>Spoluorganizuji vzdělávací workshopy pro rodiče, kteří pečují o dítě se znevýhodněním. Nabízím individuální terapii i poradenství těmto rodičům či sourozencům dětí se znevýhodněním.</p>
+        <p>Jsem členkou Českého institutu biosyntézy.</p>
+        <p>Pracuji pod supervizí MUDr.. Aleny Procházkové - Večeřové.</p>
+      <article class="about__curriculum">
+      <h3>Terapeutické výcviky a kurzy</h3>
+      <ul>
+        <li>Psychoterapeutický výcvik v biosyntéze – supervizní část, Český institut biosyntézy (dále ČIB)</li>
+        <li>Základní psychoterapeutický výcvik v biosyntéze, ČIB</li>
+        <li>Psychoterapeutické minimum, ČIB</li>
+        <li>Somatický koučink, ČIB</li>
+        <li>Pražská škola psychosociálních studií, Sebezkušenostní psychoterapeutický výcvik</li>
+        <li>Trauma I. a II., Remedium</li>
+        <li>Komplexní kurz krizové intervence (základní, navazující, telefonický), Remedium</li>
+        <li>Výcvik v internetovém poradenství, Modrá linka</li>
+        <li>Motivační rozhovory, Jan Soukup</li>
+        <li>Výklad snů, Pražská škola psychosociálních studií</li>
+        <li>Lege Artis postupy v psychoterapii, Pražská škola psychosociálních studií</li>
+      </ul>
+      <h3>Profesní kariéra</h3>  
+        <ul>
+          <li>2016 – doposud	Spoluzakladatelka organizace Freya, z. s. – lektorka, psychoterapeutka, koučka – nezisková organizace zabývající se tématem sexuality a vztahů u lidí se znevýhodněním, seniorů a seniorek.
+            </li>
+          <li>2008 – doposud	Soukromá psychoterapeutická praxe.</li>
+          <li>2016 – 2018	Péče o psychoterapeutický tým Sociální kliniky, ČIB.</li>
+          <li>2008 – 2016	Rozkoš bez Rizika, z. s., Nezisková organizace pracující se ženami ze sexbyznysu. Výkonná ředitelka, terapeutka, streetworkerka.</li>
+        </ul>
+      </article>
       </section>
     </main>
-    <footer></footer>
-
-    <!-- Flickity carusel
-    <section class="carousel">
-        <div class="main-carousel" id="testimonials">
-            <testimonials
-            v-for="item in reviews"
-            v-bind:testimonial="item"
-            v-bind:key="item.id"
-            >
-            </testimonials>
-        </div>
-    </section> 
-
-    <section class="carousel-container">
-      <div class="main-carousel" id="review-display">
-        <review-display
-          v-for="item in reviews"
-          v-bind:review="item"
-          v-bind:key="item.id"
-        >
-        </review-display>
-      </div>
-    </section> -->
-
+    <footer>
+    <address>
+      Palác YMCA, Na Poříčí 12, Praha 1, 110 00, 2. patro, zvonek Freya.
+      Moje IČ:  72772352
+      Číslo účtu – 2301855634/2010
+      Kontakt: lucie.sidova@gmail.com
+      Tel: 777 028 028
+    </address>
+  </footer>
     <script type="module" src="index.js"></script>
     <script src="flickity.js"></script>
   </body>

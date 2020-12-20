@@ -91,7 +91,6 @@ body {
   height: 95vh;
   min-height: 20rem;
   max-height: 40rem;
-  overflow: hidden;
   background: no-repeat url("../src/img/Background_still_sm2.png");
   background-position: center;
   background-size: cover;
@@ -111,12 +110,10 @@ body {
 .intro__void {
   display: block;
 }
-.intro__void-first {
-  margin-left: -3rem;
-}
 .intro__void-second {
   margin-top: 1.3rem;
-  margin-right: -2rem;
+  align-self: flex-end;
+  padding-right: 1rem;
 }
 .intro h2 {
   position: absolute;
@@ -142,6 +139,7 @@ main {
   justify-content: space-evenly;
   margin-top: -5rem;
   width: 100%;
+  position: relative;
 }
 main h2 {
   font-family: "Dancing script";
@@ -218,7 +216,7 @@ main section.services .services__tile p {
   clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
   padding-top: 3rem;
   margin-top: -2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
 }
 .kontakt__details {
   margin-top: 2rem;
@@ -299,4 +297,64 @@ main section.services .services__tile p {
   flex-direction: column;
   background-color: #A2E0DF;
   margin-top: 2rem;
+}
+
+.cenik {
+  background-color: #A2E0DF;
+  clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
+  margin-top: -2rem;
+  padding-bottom: 5rem;
+  color: #145C5B;
+}
+.cenik h2 {
+  margin-bottom: 0;
+}
+.cenik p:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.cenik span {
+  font-size: 3rem;
+  font-family: "Raleway";
+  font-weight: 700;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F2EFDF;
+  clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
+  margin: -2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  color: #145C5B;
+}
+.about p {
+  margin: 0;
+}
+.about__curriculum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Raleway";
+  font-size: 1.3rem;
+}
+.about__curriculum h3 {
+  display: block;
+  padding: 0 1rem;
+}
+.about__curriculum ul li {
+  padding: 0.3rem 1rem;
+}
+
+footer {
+  background-color: #EBE1B2;
+  border-radius: 2rem 2rem 0 0;
+  position: absolute;
+}
+footer address {
+  padding: 1.5rem;
 }
