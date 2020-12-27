@@ -2,10 +2,17 @@
 
 footer {
     background-color: intro.$gold;
-    border-radius: 2rem 2rem 0 0;
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 0;
+    font-family: intro.$raleway;
+    font-size: 1.3rem;
 
-    address {
-        padding: 1.5rem;
+    address, .footer__details {
+        white-space: pre-line;
+        padding: 0 1rem;
+        width: 90%;
     }
 }

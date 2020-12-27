@@ -37,9 +37,9 @@
           <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
             {{button.text}}
           </button>
-          <li class="menu__item"><a href="#">Služby</a></li>
-          <li class="menu__item"><a href="#">O mně</a></li>
-          <li class="menu__item"><a href="#">Kontakt</a></li>
+          <li class="menu__item"><a href="#services" v-on:click="toggleMenu">Služby</a></li>
+          <li class="menu__item"><a href="#about" v-on:click="toggleMenu">O mně</a></li>
+          <li class="menu__item"><a href="#kontakt" v-on:click="toggleMenu">Kontakt</a></li>
         </ul>
       </div>
     </nav>
@@ -73,7 +73,7 @@
         v-bind:message="item.message"
         ></services-tile>
       </section>
-      <section class="kontakt">
+      <section class="kontakt" id="kontakt">
         <address class="kontakt__details">
           <div class="kontakt__details__phone">
             <i class="fas fa-phone-alt"></i>
@@ -100,7 +100,7 @@
             <label for="message">S čím Vám mohu pomoci</label>
             <textarea type="text" id="message" name="message" v-model="contact.message"></textarea>
           </div>
-          <!-- <div class="g-recaptcha" data-sitekey="6Le4UgUaAAAAAMdkXFJcxMXewGzk57UbPGGKvjXt"></div> -->
+          <div class="g-recaptcha" data-sitekey="6Le4UgUaAAAAAMdkXFJcxMXewGzk57UbPGGKvjXt"></div>
           <button type="submit">Odeslat</button>
           </div>
           <div class="kontakt__form__success" v-if="!isHidden">
@@ -113,13 +113,13 @@
         <p>Terapie je možná i online. Nicméně preferuji osobní setkání.</p>
         <p><span>800,- Kč</span>(50 minut)</p>
       </section>
-      <section class="about">
+      <section class="about" id="about">
         <h2>O mně</h2>
         <p>Jako lektorka přednáším téma sexuality lidí s hendikepem, seniorů a seniorek v sociálních, zdravotních a školských zařízeních.</p>
         <p>Spoluorganizuji vzdělávací workshopy pro rodiče, kteří pečují o dítě se znevýhodněním. Nabízím individuální terapii i poradenství těmto rodičům či sourozencům dětí se znevýhodněním.</p>
         <p>Jsem členkou Českého institutu biosyntézy.</p>
         <p>Pracuji pod supervizí MUDr.. Aleny Procházkové - Večeřové.</p>
-      <article class="about__curriculum">
+      <article class="about__terapie">
       <h3>Terapeutické výcviky a kurzy</h3>
       <ul>
         <li>Psychoterapeutický výcvik v biosyntéze – supervizní část, Český institut biosyntézy (dále ČIB)</li>
@@ -134,25 +134,33 @@
         <li>Výklad snů, Pražská škola psychosociálních studií</li>
         <li>Lege Artis postupy v psychoterapii, Pražská škola psychosociálních studií</li>
       </ul>
+      </article>
+      <article class="about__kariera">
       <h3>Profesní kariéra</h3>  
         <ul>
-          <li>2016 – doposud	Spoluzakladatelka organizace Freya, z. s. – lektorka, psychoterapeutka, koučka – nezisková organizace zabývající se tématem sexuality a vztahů u lidí se znevýhodněním, seniorů a seniorek.
+          <li><span>2016 – doposud </span>	<strong>Spoluzakladatelka organizace Freya, z. s.</strong> – lektorka, psychoterapeutka, koučka – nezisková organizace zabývající se tématem sexuality a vztahů u lidí se znevýhodněním, seniorů a seniorek.
             </li>
-          <li>2008 – doposud	Soukromá psychoterapeutická praxe.</li>
-          <li>2016 – 2018	Péče o psychoterapeutický tým Sociální kliniky, ČIB.</li>
-          <li>2008 – 2016	Rozkoš bez Rizika, z. s., Nezisková organizace pracující se ženami ze sexbyznysu. Výkonná ředitelka, terapeutka, streetworkerka.</li>
+          <li><span>2008 – doposud</span>	<strong>Soukromá psychoterapeutická praxe.</strong></li>
+          <li><span>2016 – 2018	</span> <strong>Péče o psychoterapeutický tým Sociální kliniky ČIB.</strong></li>
+          <li><span>2008 – 2016	</span><strong>Rozkoš bez Rizika, z. s.,</strong> Nezisková organizace pracující se ženami ze sexbyznysu. Výkonná ředitelka, terapeutka, streetworkerka.</li>
         </ul>
       </article>
       </section>
     </main>
     <footer>
     <address>
-      Palác YMCA, Na Poříčí 12, Praha 1, 110 00, 2. patro, zvonek Freya.
-      Moje IČ:  72772352
-      Číslo účtu – 2301855634/2010
-      Kontakt: lucie.sidova@gmail.com
-      Tel: 777 028 028
+      Palác YMCA 
+      Na Poříčí 12 
+      Praha 1, 110 00, 
+      2. patro, zvonek Freya.<hr>
     </address>
+    <article class="footer__details">
+      IČO:  72772352
+      Číslo účtu: 2301855634/2010
+      <hr>
+      lucie.sidova@gmail.com
+      +420 777 028 028
+    </article>
   </footer>
     <script type="module" src="index.js"></script>
     <script src="flickity.js"></script>

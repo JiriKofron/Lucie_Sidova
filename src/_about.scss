@@ -8,13 +8,13 @@
     clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
     margin: -2rem 0;
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
     color: intro.$text-color;
     
     p {
         margin: 0;
     }
-    &__curriculum {
+    &__terapie, &__kariera {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -32,5 +32,27 @@
             }
         }
     }
+
+   &__kariera {
+       ul {
+           list-style: none;
+           padding-left: 0;
+
+           li {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               padding-bottom: 2rem;
+               padding-left: 1.5rem;
+
+               span {
+                   font-size: 2rem;
+                   padding-bottom: 1rem;
+                   padding-left: 0;
+               }
+           }
+       }
+   } 
     
 }
