@@ -16,18 +16,23 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
+
   <body>
     <nav class="navbar">
-      <h1>Lucie Šídová</h1>
+      <aside class="navbar__header">
+        <h1>Lucie Šídová</h1>
+        <h2>psychoterapie | poradenství | koučink</h2>
+      </aside>
       <ul class="navbar__menu">
         <li class="navbar__menu__item"><a href="#">Služby</a></li>
+        <li class="navbar__menu__item"><a href="#cenik">Ceník</a></li>
         <li class="navbar__menu__item"><a href="#">O mně</a></li>
         <li class="navbar__menu__item"><a href="#">Kontakt</a></li>
       </ul>
     </nav>
-    <nav class="navbar-small" id="app">
+    <nav class="navbar--small" id="app">
       <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
-        Menu
+        {{button.text}}
       </button>
       <div
         class="navbar--small__popmenu"
@@ -37,9 +42,15 @@
           <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
             {{button.text}}
           </button>
-          <li class="menu__item"><a href="#services" v-on:click="toggleMenu">Služby</a></li>
-          <li class="menu__item"><a href="#about" v-on:click="toggleMenu">O mně</a></li>
-          <li class="menu__item"><a href="#kontakt" v-on:click="toggleMenu">Kontakt</a></li>
+          <li class="menu__item">
+            <a href="#services" v-on:click="toggleMenu">Služby</a>
+          </li>
+          <li class="menu__item">
+            <a href="#about" v-on:click="toggleMenu">O mně</a>
+          </li>
+          <li class="menu__item">
+            <a href="#kontakt" v-on:click="toggleMenu">Kontakt</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -49,28 +60,38 @@
         ><span class="intro__void-second">Šídová</span>
       </h1>
       <h2>psychoterapie | poradenství | koučink</h2>
-      <video class="intro__background_video" autoplay muted loop src="src/vid/Background_video.mp4"
-        type="video/mp4" ></video>
+      <video
+        class="intro__background_video"
+        autoplay
+        muted
+        loop
+        src="src/vid/Background_video_compres.mp4"
+        type="video/mp4"
+      ></video>
     </header>
     <main>
       <section class="text">
-        <h2><em>Kdy mě oslovit?</em></h2>
-        <p>
-          <strong> Kdykoliv, kdy Vám není dobře po psychické stránce. 
-            Věnuji se individuální terapii, poradenství a koučování. </strong
-          >Ve své práci využívám zejména
-          metodu Biosyntézy a psychodynamický přístup. Pomohu vám řešit vztahové problémy s okolím, ale také vaše vnitřní konflikty a traumata. 
-          Věnuji se různým tématům jako jsou např. osobní rozvoj a růst, náročné životní situace,
-          traumatické zkušenosti, vztahy, rodinné problémy, sexualitě či tématům
-          spojeným s domácím a sexuálním násilím.
-        </p>
+        <div class="text__text-container">
+          <h2><em>Kdy mě oslovit?</em></h2>
+          <p>
+            <strong> Kdykoliv, kdy Vám není dobře po psychické stránce.</strong>
+            Může to být, když potřebujete řešit problém ve vztazích, nebo se
+            nacházíte v životní krizi, trpíte úzkostmi, depresemi, strachem,
+            neradujete se ze života, nemáte životní cíl, smysl, máte nízké
+            sebevědomí, negativní vztah k sobě a svému tělu, máte konflikty mezi
+            lidmi, zažili jste trauma a vrací se vám vzpomínky, potřebujete se
+            vyrovnat se svojí minulostí či se rozvíjet. Když vás bolí ruka nebo
+            si ji zlomíte, jdete k lékaři. Stejně tak byste měli využít
+            terapeuta/tku, když vám není dobře po psychické stránce.
+          </p>
+        </div>
       </section>
       <section class="services" id="services">
         <services-tile
-        v-for="item in items"
-        v-bind:key="item.id"
-        v-bind:header="item.header"
-        v-bind:message="item.message"
+          v-for="item in items"
+          v-bind:key="item.id"
+          v-bind:header="item.header"
+          v-bind:message="item.message"
         ></services-tile>
       </section>
       <section class="kontakt" id="kontakt">
@@ -84,28 +105,58 @@
             <h3>lucie.sidova@gmail.com</h3>
           </div>
         </address>
-        <form action="/submit" @submit.prevent="submitForm" method="post" class="kontakt__form" id="form">
+        <form
+          action="/submit"
+          @submit.prevent="submitForm"
+          method="post"
+          class="kontakt__form"
+          id="form"
+        >
           <h2>Napište mi</h2>
           <div class="kontakt__form__container" v-if="isHidden">
-          <div class="kontakt__form__container__field">
-            <label for="name">Jméno</label>
-            <input type="text" id="name" name="name" v-model="contact.name" required>
-          </div>
-         
-          <div class="kontakt__form__container__field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" v-model="contact.email" required>
-          </div>
-          <div class="kontakt__form__container__field">
-            <label for="message">S čím Vám mohu pomoci</label>
-            <textarea type="text" id="message" name="message" v-model="contact.message"></textarea>
-          </div>
-          <div class="g-recaptcha" data-sitekey="6Le4UgUaAAAAAMdkXFJcxMXewGzk57UbPGGKvjXt"></div>
-          <button type="submit">Odeslat</button>
+            <div class="kontakt__form__container__field">
+              <label for="name">Jméno</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                v-model="contact.name"
+                required
+              />
+            </div>
+
+            <div class="kontakt__form__container__field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                v-model="contact.email"
+                required
+              />
+            </div>
+            <div class="kontakt__form__container__field">
+              <label for="message">S čím Vám mohu pomoci</label>
+              <textarea
+                type="text"
+                id="message"
+                name="message"
+                v-model="contact.message"
+              ></textarea>
+            </div>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Le4UgUaAAAAAMdkXFJcxMXewGzk57UbPGGKvjXt"
+            ></div>
+            <button type="submit">Odeslat</button>
           </div>
           <div class="kontakt__form__success" v-if="!isHidden">
             <h2>Děkuji!</h2>
-            <p>A je to! Udělali jste první krok. Nyní prosím o chvíli strpení, ozvu se Vám co nejdříve.</p></div>
+            <p>
+              A je to! Udělali jste první krok. Nyní prosím o chvíli strpení,
+              ozvu se Vám co nejdříve.
+            </p>
+          </div>
         </form>
       </section>
       <section class="cenik">
@@ -115,53 +166,101 @@
       </section>
       <section class="about" id="about">
         <h2>O mně</h2>
-        <p>Jako lektorka přednáším téma sexuality lidí s hendikepem, seniorů a seniorek v sociálních, zdravotních a školských zařízeních.</p>
-        <p>Spoluorganizuji vzdělávací workshopy pro rodiče, kteří pečují o dítě se znevýhodněním. Nabízím individuální terapii i poradenství těmto rodičům či sourozencům dětí se znevýhodněním.</p>
+        <p>
+          Věnuji se individuální terapii, krizové intervenci, poradenství a
+          somatickému koučování. Pracuji především s dospělými lidmi. Ve své
+          práci využívám zejména metodu Biosyntézy a psychodynamický přístup.
+          Věnuji se různým tématům jako jsou např. osobní rozvoj a růst, náročné
+          životní situace, traumatické zkušenosti, partnerské vztahy, rodinné
+          problémy, sexualita, či tématům spojeným s domácím a sexuálním
+          násilím.
+        </p>
+        <p>
+          Jako lektorka přednáším téma sexuality lidí s hendikepem, seniorů a
+          seniorek v sociálních, zdravotních a školských zařízeních.
+        </p>
+        <p>
+          Spoluorganizuji vzdělávací workshopy pro rodiče, kteří pečují o dítě
+          se znevýhodněním. Nabízím individuální terapii i poradenství těmto
+          rodičům či sourozencům dětí se znevýhodněním.
+        </p>
         <p>Jsem členkou Českého institutu biosyntézy.</p>
         <p>Pracuji pod supervizí MUDr.. Aleny Procházkové - Večeřové.</p>
-      <article class="about__terapie">
-      <h3>Terapeutické výcviky a kurzy</h3>
-      <ul>
-        <li>Psychoterapeutický výcvik v biosyntéze – supervizní část, Český institut biosyntézy (dále ČIB)</li>
-        <li>Základní psychoterapeutický výcvik v biosyntéze, ČIB</li>
-        <li>Psychoterapeutické minimum, ČIB</li>
-        <li>Somatický koučink, ČIB</li>
-        <li>Pražská škola psychosociálních studií, Sebezkušenostní psychoterapeutický výcvik</li>
-        <li>Trauma I. a II., Remedium</li>
-        <li>Komplexní kurz krizové intervence (základní, navazující, telefonický), Remedium</li>
-        <li>Výcvik v internetovém poradenství, Modrá linka</li>
-        <li>Motivační rozhovory, Jan Soukup</li>
-        <li>Výklad snů, Pražská škola psychosociálních studií</li>
-        <li>Lege Artis postupy v psychoterapii, Pražská škola psychosociálních studií</li>
-      </ul>
-      </article>
-      <article class="about__kariera">
-      <h3>Profesní kariéra</h3>  
-        <ul>
-          <li><span>2016 – doposud </span>	<strong>Spoluzakladatelka organizace Freya, z. s.</strong> – lektorka, psychoterapeutka, koučka – nezisková organizace zabývající se tématem sexuality a vztahů u lidí se znevýhodněním, seniorů a seniorek.
+        <article class="about__terapie">
+          <h3>Terapeutické výcviky a kurzy</h3>
+          <ul>
+            <li>
+              Psychoterapeutický výcvik v biosyntéze – supervizní část, Český
+              institut biosyntézy (dále ČIB)
             </li>
-          <li><span>2008 – doposud</span>	<strong>Soukromá psychoterapeutická praxe.</strong></li>
-          <li><span>2016 – 2018	</span> <strong>Péče o psychoterapeutický tým Sociální kliniky ČIB.</strong></li>
-          <li><span>2008 – 2016	</span><strong>Rozkoš bez Rizika, z. s.,</strong> Nezisková organizace pracující se ženami ze sexbyznysu. Výkonná ředitelka, terapeutka, streetworkerka.</li>
-        </ul>
-      </article>
+            <li>Základní psychoterapeutický výcvik v biosyntéze, ČIB</li>
+            <li>Psychoterapeutické minimum, ČIB</li>
+            <li>Somatický koučink, ČIB</li>
+            <li>
+              Pražská škola psychosociálních studií, Sebezkušenostní
+              psychoterapeutický výcvik
+            </li>
+            <li>Trauma I. a II., Remedium</li>
+            <li>
+              Komplexní kurz krizové intervence (základní, navazující,
+              telefonický), Remedium
+            </li>
+            <li>Výcvik v internetovém poradenství, Modrá linka</li>
+            <li>Motivační rozhovory, Jan Soukup</li>
+            <li>Výklad snů, Pražská škola psychosociálních studií</li>
+            <li>
+              Lege Artis postupy v psychoterapii, Pražská škola psychosociálních
+              studií
+            </li>
+          </ul>
+        </article>
+        <article class="about__kariera">
+          <h3>Profesní kariéra</h3>
+          <ul>
+            <li>
+              <span>2016 – doposud </span>
+              <strong>Spoluzakladatelka organizace Freya, z. s.</strong> –
+              lektorka, psychoterapeutka, koučka – nezisková organizace
+              zabývající se tématem sexuality a vztahů u lidí se znevýhodněním,
+              seniorů a seniorek.
+            </li>
+            <li>
+              <span>2008 – doposud</span>
+              <strong>Soukromá psychoterapeutická praxe.</strong>
+            </li>
+            <li>
+              <span>2016 – 2018 </span>
+              <strong
+                >Péče o psychoterapeutický tým Sociální kliniky ČIB.</strong
+              >
+            </li>
+            <li>
+              <span>2008 – 2016 </span
+              ><strong>Rozkoš bez Rizika, z. s.,</strong> Nezisková organizace
+              pracující se ženami ze sexbyznysu. Výkonná ředitelka, terapeutka,
+              streetworkerka.
+            </li>
+          </ul>
+        </article>
       </section>
     </main>
     <footer>
-    <address>
-      Palác YMCA 
-      Na Poříčí 12 
-      Praha 1, 110 00, 
-      2. patro, zvonek Freya.<hr>
-    </address>
-    <article class="footer__details">
-      IČO:  72772352
-      Číslo účtu: 2301855634/2010
-      <hr>
-      lucie.sidova@gmail.com
-      +420 777 028 028
-    </article>
-  </footer>
+      <address>
+        <p>Palác YMCA</p>
+        <p>Na Poříčí 12</p>
+        <p>Praha 1, 110 00,</p>
+        <p>2. patro, zvonek Freya.</p>
+        <hr />
+      </address>
+      <article class="footer__details">
+        <p>IČO: 72772352</p>
+        <p>Číslo účtu: 2301855634/2010</p>
+        <hr />
+        <p>lucie.sidova@gmail.com</p>
+        <p>+420 777 028 028</p>
+        <p>&#169; Lucie Šídová 2021</p>
+      </article>
+    </footer>
     <script type="module" src="index.js"></script>
     <script src="flickity.js"></script>
   </body>

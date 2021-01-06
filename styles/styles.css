@@ -9,49 +9,87 @@ body {
   display: none;
   justify-content: space-between;
   align-items: center;
-  height: 3.5rem;
+  height: 5rem;
   padding: 0 3rem;
+  width: 100%;
 }
-.navbar h1 {
+@media (min-width: 850px) {
+  .navbar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #a2e0df;
+    padding: 0 1rem;
+    z-index: 10;
+  }
+}
+.navbar__header h1 {
   font-family: "Dancing script";
-  color: #145C5B;
-  font-size: 2rem;
+  color: #145c5c;
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar__header h2 {
+  font-family: "Raleway";
+  font-size: 0.8rem;
+  color: #145c5c;
+  margin: 0.1rem 0;
+  padding: 0;
 }
 .navbar__menu {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+@media (min-width: 650px) {
+  .navbar__menu {
+    flex-direction: row;
+    width: 50%;
+    justify-content: flex-end;
+    margin-right: 2%;
+  }
 }
 .navbar__menu__item {
   font-family: "Raleway";
   font-size: 1.3rem;
   padding: 0 2rem;
-  color: #145C5B;
+  color: #145c5c;
   list-style: none;
+}
+@media (min-width: 650px) {
+  .navbar__menu__item {
+    padding: 0 1rem;
+  }
 }
 .navbar__menu__item a {
   text-decoration: none;
-  color: #145C5B;
+  color: #145c5c;
   cursor: pointer;
 }
 .navbar__menu__item a:visited a:visited a:active {
-  color: #145C5B;
+  color: #145c5c;
 }
 
 .navbar--small__menu-btn {
   position: fixed;
   display: block;
-  left: 70%;
+  right: 2rem;
   top: 1.5rem;
   z-index: 1000;
   font-family: "Raleway";
   font-size: 1.3rem;
   border: none;
-  background-color: #CC85BB;
+  background-color: #cc85bb;
   color: white;
   padding: 0.5rem;
   cursor: pointer;
+}
+@media (min-width: 850px) {
+  .navbar--small__menu-btn {
+    display: none;
+  }
 }
 .navbar--small__popmenu {
   display: none;
@@ -63,9 +101,14 @@ body {
   z-index: 100;
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
 }
+@media (min-width: 421px) {
+  .navbar--small__popmenu {
+    height: 90%;
+  }
+}
 .navbar--small__popmenu a {
   text-decoration: none;
-  color: #145C5B;
+  color: #145c5c;
   cursor: pointer;
 }
 .navbar--small__popmenu__menu {
@@ -78,7 +121,7 @@ body {
   align-items: center;
   list-style: none;
   font-family: "Raleway";
-  color: #145C5B;
+  color: #145c5c;
   font-size: 1.8rem;
   line-height: 5rem;
 }
@@ -95,17 +138,37 @@ body {
   background-position: center;
   background-size: cover;
 }
+@media (min-width: 421px) {
+  .intro {
+    height: 30rem;
+  }
+}
+@media (min-width: 850px) {
+  .intro {
+    height: 90vh;
+    max-height: 30rem;
+    background: none;
+  }
+}
 .intro h1 {
   width: 100%;
   height: 50%;
   display: flex;
   flex-direction: column;
-  top: 10%;
   font-family: "Dancing script";
   font-size: 5.6rem;
-  padding: 0 -2rem;
   text-align: center;
-  color: #145C5B;
+  color: #145c5c;
+}
+@media (min-width: 421px) {
+  .intro h1 {
+    margin-top: 1rem;
+  }
+}
+@media (min-width: 850px) {
+  .intro h1 {
+    display: none;
+  }
 }
 .intro__void {
   display: block;
@@ -115,22 +178,38 @@ body {
   align-self: flex-end;
   padding-right: 1rem;
 }
+@media (min-width: 421px) {
+  .intro__void-second {
+    align-self: center;
+  }
+}
 .intro h2 {
   position: absolute;
   display: block;
   text-align: center;
-  top: 60%;
+  top: 55%;
   padding: 1rem;
   letter-spacing: 0.2rem;
-  color: #145C5B;
+  color: #145c5c;
   font-family: "Raleway";
   font-style: italic;
   font-size: 1.6rem;
   line-height: 2.2rem;
 }
+@media (min-width: 850px) {
+  .intro h2 {
+    display: none;
+  }
+}
 .intro__background_video {
   width: 100%;
   display: none;
+}
+@media (min-width: 850px) {
+  .intro__background_video {
+    display: flex;
+    filter: opacity(80%);
+  }
 }
 
 main {
@@ -140,6 +219,12 @@ main {
   margin-top: -5rem;
   width: 100%;
   position: relative;
+}
+@media (min-width: 850px) {
+  main {
+    margin: 0 auto;
+    max-width: 80rem;
+  }
 }
 main h2 {
   font-family: "Dancing script";
@@ -153,24 +238,42 @@ main p {
   padding: 1.5rem;
 }
 main section.text {
-  background-color: #F2EFDF;
+  background-color: #f2efdf;
   padding: 3.5rem 0;
   clip-path: polygon(0 0, 100% 2rem, 100% 100%, 0% 100%);
-  color: #145C5B;
+  color: #145c5c;
+}
+@media (min-width: 850px) {
+  main section.text {
+    clip-path: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 850px) {
+  main .text__text-container {
+    margin-top: -12rem;
+    width: 70%;
+    max-width: 47rem;
+    border-radius: 2rem;
+    background-color: rgba(162, 224, 223, 0.3);
+    backdrop-filter: blur(1rem);
+  }
 }
 main section.services {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #A2E0DF;
+  background-color: #a2e0df;
   clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
   margin-top: -2rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
 main section.services .services__tile {
-  background-color: #A2E0DF;
+  background-color: #a2e0df;
   display: flex;
   flex-direction: column;
   width: 90%;
@@ -187,13 +290,13 @@ main section.services .services__tile__h3container h3 {
   font-weight: 300;
   font-size: 2.5rem;
   margin: 1rem 0;
-  color: #145C5B;
+  color: #145c5c;
   flex-basis: 70%;
 }
 main section.services .services__tile__h3container span {
   display: block;
   align-self: flex-end;
-  color: #CC85BB;
+  color: #cc85bb;
   font-family: "Raleway";
   font-size: 4rem;
   flex-basis: 20%;
@@ -206,24 +309,42 @@ main section.services .services__tile__h3container hr {
 }
 main section.services .services__tile p {
   display: none;
-  color: white;
+  color: #145c5c;
   font-size: 1.2rem;
   padding: 1rem 2rem;
 }
+@media (min-width: 421px) {
+  main section.services .services__tile p {
+    font-size: 1.4rem;
+  }
+}
 
 .kontakt {
-  background-color: #F2EFDF;
+  background-color: #f2efdf;
   clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
   padding-top: 3rem;
   margin-top: -2rem;
   padding-bottom: 5rem;
+  color: #145c5c;
+}
+@media (min-width: 850px) {
+  .kontakt {
+    display: flex;
+    justify-content: space-evenly;
+  }
 }
 .kontakt__details {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 850px) {
+  .kontakt__details {
+    justify-content: flex-start;
+    margin-top: 4rem;
+  }
 }
 .kontakt__details__phone, .kontakt__details__email {
   display: flex;
@@ -233,11 +354,11 @@ main section.services .services__tile p {
 }
 .kontakt__details__phone i, .kontakt__details__email i {
   font-size: 4rem;
-  color: #CC85BB;
+  color: #cc85bb;
 }
 .kontakt__details__phone h3, .kontakt__details__email h3 {
   font-size: 1.6rem;
-  color: #145C5B;
+  color: #145c5c;
 }
 .kontakt__details__phone {
   margin-bottom: 2rem;
@@ -249,8 +370,13 @@ main section.services .services__tile p {
   margin-top: 1rem;
 }
 .kontakt__form h2 {
-  color: #145C5B;
+  color: #145c5c;
   margin-bottom: 0;
+}
+@media (min-width: 850px) {
+  .kontakt__form h2 {
+    display: none;
+  }
 }
 .kontakt__form__container {
   display: flex;
@@ -265,14 +391,15 @@ main section.services .services__tile p {
   width: 90%;
   font-family: "Raleway";
   margin: 2rem 0 1rem 1rem;
-  color: #145C5B;
+  color: #145c5c;
 }
 .kontakt__form__container__field label {
   align-self: flex-start;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
-.kontakt__form__container__field input, .kontakt__form__container__field textarea {
+.kontakt__form__container__field input,
+.kontakt__form__container__field textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 1.6rem 0 0.3rem 0;
@@ -280,12 +407,23 @@ main section.services .services__tile p {
   font-size: 1.4rem;
   background-color: rgba(235, 225, 178, 0.4);
   border: 0;
-  border-bottom: 0.1rem solid #145C5B;
+  border-bottom: 0.1rem solid #145c5c;
+}
+@media (min-width: 650px) {
+  .kontakt__form__container__field input {
+    padding: 0.5rem 0.3rem;
+  }
+}
+@media (min-width: 650px) {
+  .kontakt__form__container__field textarea {
+    padding: 0.3rem 0;
+    height: 8rem;
+  }
 }
 .kontakt__form button {
   align-self: center;
   width: 60%;
-  background-color: #CC85BB;
+  background-color: #cc85bb;
   color: white;
   font-family: inherit;
   font-size: 1.5rem;
@@ -296,16 +434,21 @@ main section.services .services__tile p {
 .kontakt__form__success {
   display: flex;
   flex-direction: column;
-  background-color: #A2E0DF;
+  background-color: #a2e0df;
   margin-top: 2rem;
 }
 
 .cenik {
-  background-color: #A2E0DF;
+  background-color: #a2e0df;
   clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
   margin-top: -2rem;
   padding-bottom: 5rem;
-  color: #145C5B;
+  color: #145c5c;
+}
+@media (min-width: 850px) {
+  .cenik {
+    display: none;
+  }
 }
 .cenik h2 {
   margin-bottom: 0;
@@ -326,12 +469,25 @@ main section.services .services__tile p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #F2EFDF;
+  background-color: #f2efdf;
   clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
   margin: -2rem 0;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  color: #145C5B;
+  color: #145c5c;
+}
+@media (min-width: 650px) {
+  .about {
+    align-items: flex-start;
+  }
+  .about h2 {
+    align-self: center;
+  }
+}
+@media (min-width: 850px) {
+  .about {
+    background-color: #a2e0df;
+  }
 }
 .about p {
   margin: 0;
@@ -369,7 +525,7 @@ main section.services .services__tile p {
 }
 
 footer {
-  background-color: #EBE1B2;
+  background-color: #ebe1b2;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -378,8 +534,8 @@ footer {
   font-family: "Raleway";
   font-size: 1.3rem;
 }
-footer address, footer .footer__details {
-  white-space: pre-line;
+footer address,
+footer .footer__details {
   padding: 0 1rem;
   width: 90%;
 }

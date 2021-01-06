@@ -1,0 +1,11 @@
+Responsivní:
+
+850px
+- rozpis služeb zkusit jestli jde, aby rozkliknutí bylo jen jedno tedy když rozkliknu jedno, sbalí se druhé - kvůli fixní výšce stránky, případně nechat kdy mě oslovit nahoře a u služeb z toho udělat menu vlevo, kde se ale bude rozbalovat vedle a ne dolů, stejně ale budu potřebovat, aby se rozbalovalo jen jedno...
+- terapeutické kurzy a profesní dát do sloupců vedle sebe
+- menu
+- kontakty do sloupců
+- ceník do menu - pop up box u menu
+- footer dva sloupce
+
+851 a výš, jen kontrolovat velikost prvků, už není potřeba nic schovávat nebo výrazně upravovat, asi

@@ -1,169 +1,253 @@
-$light-blue: #A2E0DF;
-$sand: #F2EFDF;
-$dark-pink: #CC85BB;
-$gold: #EBE1B2;
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 1240px) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 850px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 650px) {
+      @content;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 421px) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 420px) {
+      @content;
+    }
+  }
+}
 
-$text-color: #145C5B;
+$light-blue: #a2e0df;
+$sand: #f2efdf;
+$dark-pink: #cc85bb;
+$gold: #ebe1b2;
 
+$text-color: #145c5c;
 
-$dancing: "Dancing script";
-$raleway: "Raleway";
+$dancing: 'Dancing script';
+$raleway: 'Raleway';
 
 body {
-    padding: 0;
-    margin: 0;
-    font-size: 15px;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
 }
 
 .navbar {
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    height: 3.5rem;
-    padding: 0 3rem;
-    // background-color: $light-blue;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  height: 5rem;
+  padding: 0 3rem;
+  width: 100%;
 
-
+  @include breakpoint(laptop) {
+    display: flex;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: $light-blue;
+    padding: 0 1rem;
+    z-index: 10;
+  }
+  &__header {
     h1 {
-        font-family: $dancing;
+      font-family: $dancing;
+      color: $text-color;
+      font-size: 3rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      font-family: $raleway;
+      font-size: 0.8rem;
+      color: $text-color;
+      margin: 0.1rem 0;
+      padding: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @include breakpoint(tablet) {
+      flex-direction: row;
+      width: 50%;
+      justify-content: flex-end;
+      margin-right: 2%;
+    }
+
+    &__item {
+      font-family: $raleway;
+      font-size: 1.3rem;
+      padding: 0 2rem;
+      color: $text-color;
+      list-style: none;
+
+      @include breakpoint(tablet) {
+        padding: 0 1rem;
+      }
+
+      a {
+        text-decoration: none;
         color: $text-color;
-        font-size: 2rem;
+        cursor: pointer;
+      }
+
+      a:visited a:visited a:active {
+        color: $text-color;
+      }
     }
-    &__menu {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-
-        &__item {
-            font-family: $raleway;
-            font-size: 1.3rem;
-            padding: 0 2rem;
-            color: $text-color;
-            list-style: none;
-
-            a {
-                text-decoration: none;
-                color: $text-color;
-                cursor: pointer;
-            }
-
-            a:visited a:visited a:active {
-                color: $text-color;
-            }
-
-        }
-        
-    }
+  }
 }
 
-.navbar--small{
-    
-    &__menu-btn {
-        position: fixed;
-        display: block;
-        left: 70%;
-        top: 1.5rem;
-        z-index: 1000;
+.navbar--small {
+  &__menu-btn {
+    position: fixed;
+    display: block;
+    right: 2rem;
+    top: 1.5rem;
+    z-index: 1000;
 
-        font-family: $raleway;
-        font-size: 1.3rem;
-        border: none;
-        background-color: $dark-pink;
-        color: white;
-        padding: .5rem;
-        cursor: pointer;
+    font-family: $raleway;
+    font-size: 1.3rem;
+    border: none;
+    background-color: $dark-pink;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+
+    @include breakpoint(laptop) {
+      display: none;
+    }
+  }
+
+  &__popmenu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 65%;
+    max-height: 25rem;
+    background-color: rgba($gold, 1);
+    z-index: 100;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+    @include breakpoint(phablet) {
+      height: 90%;
     }
 
-    &__popmenu {
-        display: none;
-        position: fixed;
-        width: 100%;
-        height: 65%;
-        max-height: 25rem;
-        background-color: rgba($gold, 1);
-        z-index: 100;
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-
-        a {
-            text-decoration: none;
-            color: $text-color;
-            cursor: pointer;
-        }
-
-        &__menu {
-            display: flex;
-            width: 100%;
-            height: 70%;
-            margin: 4.5rem 0 0 0;
-            padding: 0;
-            flex-direction: column;
-            align-items: center;
-            list-style: none;
-
-            font-family: $raleway;
-            color: $text-color;
-            font-size: 1.8rem;
-            line-height: 5rem;
-        }
+    a {
+      text-decoration: none;
+      color: $text-color;
+      cursor: pointer;
     }
+
+    &__menu {
+      display: flex;
+      width: 100%;
+      height: 70%;
+      margin: 4.5rem 0 0 0;
+      padding: 0;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+
+      font-family: $raleway;
+      color: $text-color;
+      font-size: 1.8rem;
+      line-height: 5rem;
+    }
+  }
 }
 
 .intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 95vh;
+  min-height: 20rem;
+  max-height: 40rem;
+  background: no-repeat url('../src/img/Background_still_sm2.png');
+  background-position: center;
+  background-size: cover;
+
+  @include breakpoint(phablet) {
+    height: 30rem;
+  }
+
+  @include breakpoint(laptop) {
+    height: 90vh;
+    max-height: 30rem;
+    background: none;
+  }
+
+  h1 {
+    width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    height: 95vh;
-    min-height: 20rem;
-    max-height: 40rem;
-    // overflow: hidden;
-    background: no-repeat url("../src/img/Background_still_sm2.png");
-    background-position: center;
-    background-size: cover;
+    font-family: $dancing;
+    font-size: 5.6rem;
+    text-align: center;
+    color: $text-color;
 
-    h1 {
-        width: 100%;
-        height: 50%;
-        display: flex;
-        flex-direction: column;
-        top: 10%;
-        font-family: $dancing;
-        font-size: 5.6rem;
-        padding: 0 -2rem;
-        text-align: center;
-        color: $text-color;
+    @include breakpoint(phablet) {
+      margin-top: 1rem;
     }
 
-    &__void {
-        display: block;
-
-        &-second {
-            margin-top: 1.3rem;
-            align-self: flex-end;
-            padding-right: 1rem;
-        }
+    @include breakpoint(laptop) {
+      display: none;
     }
+  }
 
+  &__void {
+    display: block;
 
-    h2 {
-        position: absolute;
-        display: block;
-        text-align: center;
-        top: 60%;
-        padding: 1rem;
-        letter-spacing: 0.2rem;
-        color: $text-color;
-        font-family: $raleway;
-        font-style: italic;
-        font-size: 1.6rem;
-        line-height: 2.2rem;
+    &-second {
+      margin-top: 1.3rem;
+      align-self: flex-end;
+      padding-right: 1rem;
+
+      @include breakpoint(phablet) {
+        align-self: center;
+      }
     }
+  }
 
-    &__background_video {
-        width: 100%;
-        display: none;
+  h2 {
+    position: absolute;
+    display: block;
+    text-align: center;
+    top: 55%;
+    padding: 1rem;
+    letter-spacing: 0.2rem;
+    color: $text-color;
+    font-family: $raleway;
+    font-style: italic;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+
+    @include breakpoint(laptop) {
+      display: none;
     }
+  }
 
+  &__background_video {
+    width: 100%;
+    display: none;
+
+    @include breakpoint(laptop) {
+      display: flex;
+      filter: opacity(80%);
+    }
+  }
 }
-

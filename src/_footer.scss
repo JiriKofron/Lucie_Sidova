@@ -1,18 +1,18 @@
 @use "intro";
 
 footer {
-    background-color: intro.$gold;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 2rem 0;
-    font-family: intro.$raleway;
-    font-size: 1.3rem;
+  background-color: intro.$gold;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 0;
+  font-family: intro.$raleway;
+  font-size: 1.3rem;
 
-    address, .footer__details {
-        white-space: pre-line;
-        padding: 0 1rem;
-        width: 90%;
-    }
+  address,
+  .footer__details {
+    padding: 0 1rem;
+    width: 90%;
+  }
 }
