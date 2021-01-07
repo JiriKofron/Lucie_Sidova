@@ -19,6 +19,7 @@ Vue.component('services-tile', {
     return {
       isActive: true,
       text: '+',
+      zIndex: 10,
     };
   },
   props: ['header', 'message'],
@@ -29,8 +30,10 @@ Vue.component('services-tile', {
     },
   },
   template: `<article class="services__tile" v-on:click="toggleExpand()">
-    <div class="services__tile__h3container">
+  <div class="services__tile__h3container">
+    <div class="services__tile__h3container__laptop">
     <h3>{{header}}</h3> <span>{{text}}</span>
+    </div>
     <hr>
   </div>
     <p v-bind:style="{'display' : (isActive ? 'none' : 'block')}">

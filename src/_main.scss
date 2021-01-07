@@ -62,6 +62,10 @@ main {
     padding-top: 5rem;
     padding-bottom: 5rem;
 
+    @include intro.breakpoint(laptop) {
+      padding-bottom: 8rem;
+    }
+
     .services__tile {
       background-color: intro.$light-blue;
       display: flex;
@@ -69,29 +73,50 @@ main {
       width: 90%;
       border-radius: 1rem;
 
+      @include intro.breakpoint(laptop) {
+        flex-direction: row;
+        position: relative;
+      }
+
       &__h3container {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         flex-wrap: wrap;
 
-        h3 {
-          font-family: intro.$dancing;
-          font-weight: 300;
-          font-size: 2.5rem;
-          margin: 1rem 0;
-          color: intro.$text-color;
-          flex-basis: 70%;
-        }
+        &__laptop {
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          flex-wrap: nowrap;
+          width: 100%;
 
-        span {
-          display: block;
-          align-self: flex-end;
-          color: intro.$dark-pink;
-          font-family: intro.$raleway;
-          font-size: 4rem;
-          flex-basis: 20%;
-          cursor: pointer;
+          @include intro.breakpoint(laptop) {
+            width: 24rem;
+          }
+
+          h3 {
+            font-family: intro.$dancing;
+            font-weight: 300;
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: intro.$text-color;
+            flex-basis: 70%;
+
+            @include intro.breakpoint(laptop) {
+              flex-basis: 100%;
+            }
+          }
+
+          span {
+            display: block;
+            align-self: flex-end;
+            color: intro.$dark-pink;
+            font-family: intro.$raleway;
+            font-size: 4rem;
+            flex-basis: 20%;
+            cursor: pointer;
+          }
         }
 
         hr {

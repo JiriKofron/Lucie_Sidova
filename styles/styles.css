@@ -95,16 +95,10 @@ body {
   display: none;
   position: fixed;
   width: 100%;
-  height: 65%;
+  height: 100%;
   max-height: 25rem;
   background-color: #ebe1b2;
   z-index: 100;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-}
-@media (min-width: 421px) {
-  .navbar--small__popmenu {
-    height: 90%;
-  }
 }
 .navbar--small__popmenu a {
   text-decoration: none;
@@ -124,6 +118,16 @@ body {
   color: #145c5c;
   font-size: 1.8rem;
   line-height: 5rem;
+}
+@media (min-width: 421px) {
+  .navbar--small__popmenu__menu {
+    margin-top: 0.3rem;
+  }
+}
+@media (min-width: 650px) {
+  .navbar--small__popmenu__menu {
+    margin-top: 3rem;
+  }
 }
 
 .intro {
@@ -272,6 +276,11 @@ main section.services {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+@media (min-width: 850px) {
+  main section.services {
+    padding-bottom: 8rem;
+  }
+}
 main section.services .services__tile {
   background-color: #a2e0df;
   display: flex;
@@ -279,13 +288,31 @@ main section.services .services__tile {
   width: 90%;
   border-radius: 1rem;
 }
+@media (min-width: 850px) {
+  main section.services .services__tile {
+    flex-direction: row;
+    position: relative;
+  }
+}
 main section.services .services__tile__h3container {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-main section.services .services__tile__h3container h3 {
+main section.services .services__tile__h3container__laptop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+@media (min-width: 850px) {
+  main section.services .services__tile__h3container__laptop {
+    width: 24rem;
+  }
+}
+main section.services .services__tile__h3container__laptop h3 {
   font-family: "Dancing script";
   font-weight: 300;
   font-size: 2.5rem;
@@ -293,7 +320,12 @@ main section.services .services__tile__h3container h3 {
   color: #145c5c;
   flex-basis: 70%;
 }
-main section.services .services__tile__h3container span {
+@media (min-width: 850px) {
+  main section.services .services__tile__h3container__laptop h3 {
+    flex-basis: 100%;
+  }
+}
+main section.services .services__tile__h3container__laptop span {
   display: block;
   align-self: flex-end;
   color: #cc85bb;
@@ -351,6 +383,15 @@ main section.services .services__tile p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 850px) {
+  .kontakt__details__phone, .kontakt__details__email {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    background-color: rgba(235, 225, 178, 0.4);
+    text-align: center;
+  }
 }
 .kontakt__details__phone i, .kontakt__details__email i {
   font-size: 4rem;
@@ -445,6 +486,11 @@ main section.services .services__tile p {
   padding-bottom: 5rem;
   color: #145c5c;
 }
+@media (min-width: 650px) {
+  .cenik p {
+    text-align: center;
+  }
+}
 @media (min-width: 850px) {
   .cenik {
     display: none;
@@ -487,30 +533,48 @@ main section.services .services__tile p {
 @media (min-width: 850px) {
   .about {
     background-color: #a2e0df;
+    align-items: center;
+    columns: 2;
   }
 }
 .about p {
   margin: 0;
 }
-.about__terapie, .about__kariera {
+@media (min-width: 850px) {
+  .about p {
+    max-width: 47rem;
+  }
+}
+.about__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.about__container__terapie, .about__container__kariera {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Raleway";
   font-size: 1.3rem;
+  flex-basis: 45%;
 }
-.about__terapie h3, .about__kariera h3 {
+.about__container__terapie h3, .about__container__kariera h3 {
   display: block;
   padding: 0 1rem;
 }
-.about__terapie ul li, .about__kariera ul li {
+.about__container__terapie ul li, .about__container__kariera ul li {
   padding: 0.3rem 1rem;
 }
-.about__kariera ul {
+@media (min-width: 850px) {
+  .about__container__terapie, .about__container__kariera {
+    max-width: 47rem;
+  }
+}
+.about__container__kariera ul {
   list-style: none;
   padding-left: 0;
 }
-.about__kariera ul li {
+.about__container__kariera ul li {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -518,7 +582,7 @@ main section.services .services__tile p {
   padding-bottom: 2rem;
   padding-left: 1.5rem;
 }
-.about__kariera ul li span {
+.about__container__kariera ul li span {
   font-size: 2rem;
   padding-bottom: 1rem;
   padding-left: 0;

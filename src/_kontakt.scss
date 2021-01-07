@@ -32,6 +32,14 @@
       justify-content: center;
       align-items: center;
 
+      @include intro.breakpoint(laptop) {
+        height: 15rem;
+        width: 15rem;
+        border-radius: 50%;
+        background-color: rgba(intro.$gold, 0.4);
+        text-align: center;
+      }
+
       i {
         font-size: 4rem;
         color: intro.$dark-pink;

@@ -12,56 +12,74 @@
   color: intro.$text-color;
 
   @include intro.breakpoint(tablet) {
+    align-items: flex-start;
     h2 {
       align-self: center;
     }
-    align-items: flex-start;
   }
 
   @include intro.breakpoint(laptop) {
     background-color: intro.$light-blue;
+    align-items: center;
+    columns: 2;
   }
 
   p {
     margin: 0;
-  }
-  &__terapie,
-  &__kariera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: intro.$raleway;
-    font-size: 1.3rem;
 
-    h3 {
-      display: block;
-      padding: 0 1rem;
+    @include intro.breakpoint(laptop) {
+      max-width: 47rem;
     }
+  }
 
-    ul {
-      li {
-        padding: 0.3rem 1rem;
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    &__terapie,
+    &__kariera {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: intro.$raleway;
+      font-size: 1.3rem;
+      flex-basis: 45%;
+
+      h3 {
+        display: block;
+        padding: 0 1rem;
+      }
+
+      ul {
+        li {
+          padding: 0.3rem 1rem;
+        }
+      }
+
+      @include intro.breakpoint(laptop) {
+        max-width: 47rem;
       }
     }
-  }
 
-  &__kariera {
-    ul {
-      list-style: none;
-      padding-left: 0;
+    &__kariera {
+      ul {
+        list-style: none;
+        padding-left: 0;
 
-      li {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 2rem;
-        padding-left: 1.5rem;
+        li {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-bottom: 2rem;
+          padding-left: 1.5rem;
 
-        span {
-          font-size: 2rem;
-          padding-bottom: 1rem;
-          padding-left: 0;
+          span {
+            font-size: 2rem;
+            padding-bottom: 1rem;
+            padding-left: 0;
+          }
         }
       }
     }

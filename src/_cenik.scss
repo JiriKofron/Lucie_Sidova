@@ -7,6 +7,12 @@
   padding-bottom: 5rem;
   color: intro.$text-color;
 
+  @include intro.breakpoint(tablet) {
+    p {
+      text-align: center;
+    }
+  }
+
   @include intro.breakpoint(laptop) {
     display: none;
   }
