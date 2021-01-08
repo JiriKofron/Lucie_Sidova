@@ -3,13 +3,15 @@ body {
   padding: 0;
   margin: 0;
   font-size: 15px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .navbar {
   display: none;
   justify-content: space-between;
   align-items: center;
-  height: 5rem;
+  height: 5.5rem;
   padding: 0 3rem;
   width: 100%;
 }
@@ -21,8 +23,12 @@ body {
     top: 0;
     background-color: #a2e0df;
     padding: 0 1rem;
-    z-index: 10;
+    z-index: 50;
   }
+}
+.navbar__header {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .navbar__header h1 {
   font-family: "Dancing script";
@@ -136,7 +142,7 @@ body {
   align-items: center;
   position: relative;
   height: 95vh;
-  min-height: 20rem;
+  min-height: 30rem;
   max-height: 40rem;
   background: no-repeat url("../src/img/Background_still_sm2.png");
   background-position: center;
@@ -144,13 +150,13 @@ body {
 }
 @media (min-width: 421px) {
   .intro {
-    height: 30rem;
+    height: 40rem;
   }
 }
 @media (min-width: 850px) {
   .intro {
-    height: 90vh;
-    max-height: 30rem;
+    height: 100%;
+    max-height: none;
     background: none;
   }
 }
@@ -208,6 +214,7 @@ body {
 .intro__background_video {
   width: 100%;
   display: none;
+  position: fixed;
 }
 @media (min-width: 850px) {
   .intro__background_video {
@@ -223,11 +230,13 @@ main {
   margin-top: -5rem;
   width: 100%;
   position: relative;
+  z-index: 20;
 }
 @media (min-width: 850px) {
   main {
-    margin: 0 auto;
-    max-width: 80rem;
+    max-width: 95rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 main h2 {
@@ -242,6 +251,9 @@ main p {
   padding: 1.5rem;
 }
 main section.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f2efdf;
   padding: 3.5rem 0;
   clip-path: polygon(0 0, 100% 2rem, 100% 100%, 0% 100%);
@@ -250,19 +262,27 @@ main section.text {
 @media (min-width: 850px) {
   main section.text {
     clip-path: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #f2efdf;
+  }
+}
+@media (min-width: 1240px) {
+  main section.text {
+    background-color: transparent;
   }
 }
 @media (min-width: 850px) {
   main .text__text-container {
-    margin-top: -12rem;
+    margin-top: -10rem;
     width: 70%;
     max-width: 47rem;
     border-radius: 2rem;
     background-color: rgba(162, 224, 223, 0.3);
     backdrop-filter: blur(1rem);
+  }
+}
+@media (min-width: 1240px) {
+  main .text__text-container {
+    margin-top: -18rem;
   }
 }
 main section.services {
@@ -279,6 +299,7 @@ main section.services {
 @media (min-width: 850px) {
   main section.services {
     padding-bottom: 8rem;
+    clip-path: none;
   }
 }
 main section.services .services__tile {
@@ -290,8 +311,7 @@ main section.services .services__tile {
 }
 @media (min-width: 850px) {
   main section.services .services__tile {
-    flex-direction: row;
-    position: relative;
+    align-items: center;
   }
 }
 main section.services .services__tile__h3container {
@@ -299,6 +319,11 @@ main section.services .services__tile__h3container {
   align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+@media (min-width: 850px) {
+  main section.services .services__tile__h3container {
+    align-items: center;
+  }
 }
 main section.services .services__tile__h3container__laptop {
   display: flex;
@@ -309,7 +334,7 @@ main section.services .services__tile__h3container__laptop {
 }
 @media (min-width: 850px) {
   main section.services .services__tile__h3container__laptop {
-    width: 24rem;
+    width: 26rem;
   }
 }
 main section.services .services__tile__h3container__laptop h3 {
@@ -336,6 +361,7 @@ main section.services .services__tile__h3container__laptop span {
 }
 main section.services .services__tile__h3container hr {
   flex-basis: 100%;
+  align-self: flex-start;
   width: 80%;
   border: 1px solid white;
 }
@@ -348,6 +374,11 @@ main section.services .services__tile p {
 @media (min-width: 421px) {
   main section.services .services__tile p {
     font-size: 1.4rem;
+  }
+}
+@media (min-width: 1240px) {
+  main section.services .services__tile p {
+    max-width: 47rem;
   }
 }
 
@@ -524,17 +555,7 @@ main section.services .services__tile p {
 }
 @media (min-width: 650px) {
   .about {
-    align-items: flex-start;
-  }
-  .about h2 {
-    align-self: center;
-  }
-}
-@media (min-width: 850px) {
-  .about {
-    background-color: #a2e0df;
-    align-items: center;
-    columns: 2;
+    margin-bottom: -6rem;
   }
 }
 .about p {
@@ -545,10 +566,15 @@ main section.services .services__tile p {
     max-width: 47rem;
   }
 }
-.about__container {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-evenly;
+@media (min-width: 1240px) {
+  .about__container {
+    background-color: #a2e0df;
+    align-items: center;
+    columns: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
 }
 .about__container__terapie, .about__container__kariera {
   display: flex;
@@ -568,6 +594,7 @@ main section.services .services__tile p {
 @media (min-width: 850px) {
   .about__container__terapie, .about__container__kariera {
     max-width: 47rem;
+    padding-top: 3rem;
   }
 }
 .about__container__kariera ul {
@@ -597,9 +624,31 @@ footer {
   padding: 2rem 0;
   font-family: "Raleway";
   font-size: 1.3rem;
+  width: 100%;
+  position: relative;
+  z-index: 50;
+}
+@media (min-width: 650px) {
+  footer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 4rem;
+  }
+  footer p {
+    margin: 0.2rem 0;
+  }
 }
 footer address,
 footer .footer__details {
   padding: 0 1rem;
   width: 90%;
+}
+@media (min-width: 650px) {
+  footer address,
+footer .footer__details {
+    padding: 0 3rem;
+    width: 20rem;
+  }
 }

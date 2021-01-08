@@ -12,17 +12,14 @@
   color: intro.$text-color;
 
   @include intro.breakpoint(tablet) {
-    align-items: flex-start;
-    h2 {
-      align-self: center;
-    }
+    margin-bottom: -6rem;
   }
-
-  @include intro.breakpoint(laptop) {
-    background-color: intro.$light-blue;
-    align-items: center;
-    columns: 2;
-  }
+  // @include intro.breakpoint(tablet) {
+  //   align-items: flex-start;
+  //   h2 {
+  //     align-self: center;
+  //   }
+  // }
 
   p {
     margin: 0;
@@ -33,9 +30,14 @@
   }
 
   &__container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
+    @include intro.breakpoint(desktop) {
+      background-color: intro.$light-blue;
+      align-items: center;
+      columns: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+    }
 
     &__terapie,
     &__kariera {
@@ -59,6 +61,7 @@
 
       @include intro.breakpoint(laptop) {
         max-width: 47rem;
+        padding-top: 3rem;
       }
     }
 

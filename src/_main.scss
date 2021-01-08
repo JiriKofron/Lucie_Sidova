@@ -7,10 +7,12 @@ main {
   margin-top: -5rem;
   width: 100%;
   position: relative;
+  z-index: 20;
 
   @include intro.breakpoint(laptop) {
-    margin: 0 auto;
-    max-width: 80rem;
+    max-width: 95rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   h2 {
@@ -27,6 +29,9 @@ main {
   }
 
   section.text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: intro.$sand;
     padding: 3.5rem 0;
     clip-path: polygon(0 0, 100% 2rem, 100% 100%, 0% 100%);
@@ -34,20 +39,26 @@ main {
 
     @include intro.breakpoint(laptop) {
       clip-path: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      background-color: intro.$sand;
+    }
+
+    @include intro.breakpoint(desktop) {
+      background-color: transparent;
     }
   }
 
   .text__text-container {
     @include intro.breakpoint(laptop) {
-      margin-top: -12rem;
+      margin-top: -10rem;
       width: 70%;
       max-width: 47rem;
       border-radius: 2rem;
       background-color: rgba(intro.$light-blue, 0.3);
       backdrop-filter: blur(1rem);
+    }
+
+    @include intro.breakpoint(desktop) {
+      margin-top: -18rem;
     }
   }
 
@@ -64,6 +75,7 @@ main {
 
     @include intro.breakpoint(laptop) {
       padding-bottom: 8rem;
+      clip-path: none;
     }
 
     .services__tile {
@@ -74,8 +86,7 @@ main {
       border-radius: 1rem;
 
       @include intro.breakpoint(laptop) {
-        flex-direction: row;
-        position: relative;
+        align-items: center;
       }
 
       &__h3container {
@@ -83,6 +94,10 @@ main {
         align-items: flex-start;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        @include intro.breakpoint(laptop) {
+          align-items: center;
+        }
 
         &__laptop {
           display: flex;
@@ -92,7 +107,7 @@ main {
           width: 100%;
 
           @include intro.breakpoint(laptop) {
-            width: 24rem;
+            width: 26rem;
           }
 
           h3 {
@@ -121,6 +136,7 @@ main {
 
         hr {
           flex-basis: 100%;
+          align-self: flex-start;
           width: 80%;
           border: 1px solid white;
         }
@@ -134,6 +150,10 @@ main {
 
         @include intro.breakpoint(phablet) {
           font-size: 1.4rem;
+        }
+
+        @include intro.breakpoint(desktop) {
+          max-width: 47rem;
         }
       }
     }

@@ -34,7 +34,7 @@ Vue.component('services-tile', {
     <div class="services__tile__h3container__laptop">
     <h3>{{header}}</h3> <span>{{text}}</span>
     </div>
-    <hr>
+    <hr v-bind:style="{'display' : (isActive ? 'block' : 'none')}">
   </div>
     <p v-bind:style="{'display' : (isActive ? 'none' : 'block')}">
     {{message}}

@@ -9,10 +9,28 @@ footer {
   padding: 2rem 0;
   font-family: intro.$raleway;
   font-size: 1.3rem;
+  width: 100%;
+  position: relative;
+  z-index: 50;
+
+  @include intro.breakpoint(tablet) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 4rem;
+    p {
+      margin: 0.2rem 0;
+    }
+  }
 
   address,
   .footer__details {
     padding: 0 1rem;
     width: 90%;
+    @include intro.breakpoint(tablet) {
+      padding: 0 3rem;
+      width: 20rem;
+    }
   }
 }

@@ -24,10 +24,10 @@
         <h2>psychoterapie | poradenství | koučink</h2>
       </aside>
       <ul class="navbar__menu">
-        <li class="navbar__menu__item"><a href="#">Služby</a></li>
+        <li class="navbar__menu__item"><a href="#services">Služby</a></li>
         <li class="navbar__menu__item"><a href="#cenik">Ceník</a></li>
-        <li class="navbar__menu__item"><a href="#">O mně</a></li>
-        <li class="navbar__menu__item"><a href="#">Kontakt</a></li>
+        <li class="navbar__menu__item"><a href="#about">O mně</a></li>
+        <li class="navbar__menu__item"><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
     <nav class="navbar--small" id="app">
@@ -93,6 +93,11 @@
           v-bind:header="item.header"
           v-bind:message="item.message"
         ></services-tile>
+        <service-message
+          v-for="item in items"
+          v-bind:key="item.id"
+          v-bind:message="item.message"
+        ></service-message>
       </section>
       <section class="kontakt" id="kontakt">
         <address class="kontakt__details">
@@ -255,11 +260,10 @@
         <p>Praha 1, 110 00,</p>
         <p>2. patro, zvonek Freya.</p>
         <hr />
-      </address>
-      <article class="footer__details">
         <p>IČO: 72772352</p>
         <p>Číslo účtu: 2301855634/2010</p>
-        <hr />
+      </address>
+      <article class="footer__details">
         <p>lucie.sidova@gmail.com</p>
         <p>+420 777 028 028</p>
         <p>&#169; Lucie Šídová 2021</p>
