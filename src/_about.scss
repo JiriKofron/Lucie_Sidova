@@ -11,6 +11,12 @@
   padding-bottom: 2rem;
   color: intro.$text-color;
 
+  img {
+    width: 20rem;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+  }
+
   @include intro.breakpoint(tablet) {
     margin-bottom: -6rem;
   }

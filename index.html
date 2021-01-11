@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2NGFF6PRJ8"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-2NGFF6PRJ8');
+    </script>
     <title>Lucie Šídová | psychoterapie, poradenství</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/flickity.css" />
@@ -20,46 +34,50 @@
   <body>
     <nav class="navbar">
       <aside class="navbar__header">
-        <h1>Lucie Šídová</h1>
-        <h2>psychoterapie | poradenství | koučink</h2>
+        <a href="#">
+          <h1>Lucie Šídová</h1>
+          <h2>psychoterapie | poradenství | koučink</h2>
+        </a>
       </aside>
       <ul class="navbar__menu">
         <li class="navbar__menu__item"><a href="#services">Služby</a></li>
-        <li class="navbar__menu__item"><a href="#cenik">Ceník</a></li>
+        <li class="navbar__menu__item"><a href="#faq">FAQ</a></li>
         <li class="navbar__menu__item"><a href="#about">O mně</a></li>
         <li class="navbar__menu__item"><a href="#kontakt">Kontakt</a></li>
       </ul>
+      <nav class="navbar--small" id="app">
+        <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
+          {{button.text}}
+        </button>
+        <div
+          class="navbar--small__popmenu"
+          v-bind:style="{'display' : (isActive ? 'none' : 'block')}"
+        >
+          <ul class="navbar--small__popmenu__menu">
+            <button
+              class="navbar--small__menu-btn navbar--small__menu-close"
+              v-on:click="toggleMenu"
+            >
+              {{button.text}}
+            </button>
+            <li class="menu__item">
+              <a href="#services" v-on:click="toggleMenu">Služby</a>
+            </li>
+            <li class="menu__item">
+              <a href="#about" v-on:click="toggleMenu">O mně</a>
+            </li>
+            <li class="menu__item">
+              <a href="#faq" v-on:click="toggleMenu">FAQ</a>
+            </li>
+            <li class="menu__item">
+              <a href="#kontakt" v-on:click="toggleMenu">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </nav>
-    <nav class="navbar--small" id="app">
-      <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
-        {{button.text}}
-      </button>
-      <div
-        class="navbar--small__popmenu"
-        v-bind:style="{'display' : (isActive ? 'none' : 'block')}"
-      >
-        <ul class="navbar--small__popmenu__menu">
-          <button class="navbar--small__menu-btn" v-on:click="toggleMenu">
-            {{button.text}}
-          </button>
-          <li class="menu__item">
-            <a href="#services" v-on:click="toggleMenu">Služby</a>
-          </li>
-          <li class="menu__item">
-            <a href="#about" v-on:click="toggleMenu">O mně</a>
-          </li>
-          <li class="menu__item">
-            <a href="#kontakt" v-on:click="toggleMenu">Kontakt</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+
     <header class="intro">
-      <h1>
-        <span class="intro__void-first">Lucie</span
-        ><span class="intro__void-second">Šídová</span>
-      </h1>
-      <h2>psychoterapie | poradenství | koučink</h2>
       <video
         class="intro__background_video"
         autoplay
@@ -75,15 +93,28 @@
           <h2><em>Kdy mě oslovit?</em></h2>
           <p>
             <strong> Kdykoliv, kdy Vám není dobře po psychické stránce.</strong>
-            Může to být, když potřebujete řešit problém ve vztazích, nebo se
-            nacházíte v životní krizi, trpíte úzkostmi, depresemi, strachem,
-            neradujete se ze života, nemáte životní cíl, smysl, máte nízké
-            sebevědomí, negativní vztah k sobě a svému tělu, máte konflikty mezi
-            lidmi, zažili jste trauma a vrací se vám vzpomínky, potřebujete se
-            vyrovnat se svojí minulostí či se rozvíjet. Když vás bolí ruka nebo
-            si ji zlomíte, jdete k lékaři. Stejně tak byste měli využít
-            terapeuta/tku, když vám není dobře po psychické stránce.
+            Pracuji jako terapeutka a koučka. Nabízím terapeutické služby,
+            koučink, poradenství a krizovou intervenci. Pomohu Vám v různých
+            životních situacích. Například když:
           </p>
+          <ul class="text__text-container__list">
+            <li>potřebujete řešit problémy ve vztazích,</li>
+            <li>řešíte problémy v sexualitě a sexu,</li>
+            <li>nacházíte se v životní krizi,</li>
+            <li>trpíte úzkostmi, depresemi, strachem,</li>
+            <li>neradujete se ze života, nemáte životní cíl,</li>
+            <li>máte nízké sebevědomí,</li>
+            <li>máte negativní vztah k sobě a svému tělu,</li>
+            <li>zažíváte konflikty mezi lidmi,</li>
+            <li>zažili jste trauma a vrací se vám vzpomínky,</li>
+            <li>potřebujete se vyrovnat se svojí minulostí či se rozvíjet.</li>
+          </ul>
+          <figure class="text__text-container__citation">
+            <em>Tělo si naštěstí pamatuje i to, co mysl zapomněla.</em>
+            <figcaption class="text__text-container__citation__author">
+              Sigmund Freud
+            </figcaption>
+          </figure>
         </div>
       </section>
       <section class="services" id="services">
@@ -93,13 +124,21 @@
           v-bind:header="item.header"
           v-bind:message="item.message"
         ></services-tile>
-        <service-message
+        <!-- <service-message
           v-for="item in items"
           v-bind:key="item.id"
           v-bind:message="item.message"
-        ></service-message>
+        ></service-message> -->
       </section>
       <section class="kontakt" id="kontakt">
+        <div class="kontakt__info">
+          <p>
+            <strong
+              >Kontaktovat mě můžete emailem, sms nebo přes kontaktní
+              formulář.</strong
+            >
+          </p>
+        </div>
         <address class="kontakt__details">
           <div class="kontakt__details__phone">
             <i class="fas fa-phone-alt"></i>
@@ -117,7 +156,6 @@
           class="kontakt__form"
           id="form"
         >
-          <h2>Napište mi</h2>
           <div class="kontakt__form__container" v-if="isHidden">
             <div class="kontakt__form__container__field">
               <label for="name">Jméno</label>
@@ -138,6 +176,15 @@
                 name="email"
                 v-model="contact.email"
                 required
+              />
+            </div>
+            <div class="kontakt__form__container__field">
+              <label for="phone">Telefon</label>
+              <input
+                type="phone"
+                id="phone"
+                name="phone"
+                v-model="contact.phone"
               />
             </div>
             <div class="kontakt__form__container__field">
@@ -164,13 +211,42 @@
           </div>
         </form>
       </section>
-      <section class="cenik">
-        <h2>Ceník</h2>
-        <p>Terapie je možná i online. Nicméně preferuji osobní setkání.</p>
-        <p><span>800,- Kč</span>(50 minut)</p>
+      <section class="faq" id="faq">
+        <h2>FAQ</h2>
+        <article class="faq__otazka">
+          <i class="far fa-clock"></i>
+          <h3>Délka sezení</h3>
+          <p>50 minut. Po dohodě možná i 75 minut.</p>
+        </article>
+        <article class="faq__otazka">
+          <i class="fas fa-coins"></i>
+          <h3>Cena sezení</h3>
+          <ul>
+            <li>Individuální terapie (50 min.) – 800 Kč</li>
+            <li>Koučink (50 min) – 800 Kč</li>
+            <li>Krizová intervence, poradenství (50 min) - 800 Kč.</li>
+          </ul>
+        </article>
+        <article class="faq__otazka">
+          <i class="fas fa-couch"></i>
+          <h3>Forma sezení</h3>
+          <p>Preferuji osobní setkání. Terapie je možná i online.</p>
+        </article>
+        <article class="faq__otazka">
+          <i class="far fa-file-alt"></i>
+          <h3>Platební údaje</h3>
+          <p>
+            V případě, že jsme se dohodli na bezhotovostní platbě, použijte
+            prosím následující platební údaje:
+          </p>
+          <p>Moje IČ: 72772352</p>
+          <p>Číslo účtu – 2301855634/2010</p>
+          <p>Do poznámky prosím uveďte Vaše jméno.</p>
+        </article>
       </section>
       <section class="about" id="about">
         <h2>O mně</h2>
+        <img src="./src/img/FOTO_Lucie_Sidova2.png" />
         <article class="about__about">
           <p>
             Věnuji se individuální terapii, krizové intervenci, poradenství a
@@ -191,7 +267,7 @@
             rodičům či sourozencům dětí se znevýhodněním.
           </p>
           <p>Jsem členkou Českého institutu biosyntézy.</p>
-          <p>Pracuji pod supervizí MUDr.. Aleny Procházkové - Večeřové.</p>
+          <p>Pracuji pod supervizí MUDr. Aleny Procházkové - Večeřové.</p>
         </article>
         <div class="about__container">
           <article class="about__container__terapie">
@@ -263,6 +339,13 @@
         <p>IČO: 72772352</p>
         <p>Číslo účtu: 2301855634/2010</p>
       </address>
+      <iframe
+        style="border: none"
+        src="https://frame.mapy.cz/s/hodubavele"
+        width="400"
+        height="280"
+        frameborder="0"
+      ></iframe>
       <article class="footer__details">
         <p>lucie.sidova@gmail.com</p>
         <p>+420 777 028 028</p>

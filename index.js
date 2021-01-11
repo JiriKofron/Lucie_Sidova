@@ -36,9 +36,8 @@ Vue.component('services-tile', {
     </div>
     <hr v-bind:style="{'display' : (isActive ? 'block' : 'none')}">
   </div>
-    <p v-bind:style="{'display' : (isActive ? 'none' : 'block')}">
-    {{message}}
-    </p>
+    <div class="services__tile__details" v-bind:style="{'display' : (isActive ? 'none' : 'block')}" v-html="message">
+    </div>
   </article>`,
 });
 
@@ -51,27 +50,27 @@ const services = new Vue({
       {
         header: 'Psychoterapie',
         message:
-          'V psychoterapii využívám různé metody. Podporuji klienta/klientku k nalezení vlastní cesty tak, aby byli schopni se po této cestě sami vydat a úspěšně překonávali a řešili překážky, které na ni potkají. Kromě klasického rozhovoru nabízím i řadu neverbálních technik či metody práce s tělem. Pomohu Vám utřídit si myšlenky i pocity, a porozumět souvislostem dané situace.',
+          '<strong>V psychoterapii využívám různé metody.</strong> <ul><li>Podporuji klienta/klientku k nalezení vlastní cesty tak, aby byli schopni se po této cestě sami vydat a úspěšně překonávali a řešili překážky, které na ni potkají.</li><li>Kromě klasického rozhovoru nabízím i řadu neverbálních technik či metody práce s tělem.</li> <li>Pomohu Vám utřídit si myšlenky i pocity, a porozumět souvislostem dané situace.</li>',
       },
       {
         header: 'Biosyntéza',
         message:
-          'Šrámy na duši se projevují i na těle. Během terapie využívám dynamický a procesuální přístup; vycházím z vnitřních signálů a somatických projevů klienta/klientky, na které navazuji a specifickými technikami je rozvíjím.Biosyntéza je celostní přístup v somatické psychoterapii, založený Davidem Boadellou, jedním z průkopníků a hlavních představitelů práce s tělem v   psychoterapii. Biosyntéza klade důraz na integraci základních životních procesů, a to tělesného (pohybového) spolu s prožitkovým (emocionálním) a mentálním.',
+          '<p>Šrámy na duši se projevují i na těle.</p> <p>Během terapie využívám dynamický a procesuální přístup; vycházím z vnitřních signálů a somatických projevů klienta/klientky, na které navazuji a specifickými technikami je rozvíjím. </p> <p>Biosyntéza je celostní přístup v somatické psychoterapii, založený Davidem Boadellou, jedním z průkopníků a hlavních představitelů práce s tělem v   psychoterapii.</p><p> Biosyntéza klade důraz na integraci základních životních procesů, a to tělesného (pohybového) spolu s prožitkovým (emocionálním) a mentálním.</p><p><Zdroj: <a href="https://www.biosynteza.cz" target="_blank">www.biosynteza.cz</a></p>',
       },
       {
         header: 'Somatický koučink',
         message:
-          'Koučování je technikou podpory lidí v jejich osobním růstu a při uskutečňování změn. Při koučinku podporuji klientovu/klientčinu odvahu, hledáme společně vnitřní zdroje a motivaci ke změně. Pomocí koučovacích otázek nastavuji jiný úhel pohledu na věc a společně odstraňujeme bariéry z cesty klientova/klientčina snažení. Individuální somatické koučování ® je unikátní přístup, který používá kromě běžných koučovacích technik, oslovujících hlavně intelektuální úroveň, také práci se zdroji klienta na emocionální a tělesné úrovni. Tato metoda pracuje se všemi rovinami klientova života, díky tomu je komplexnější a dává změnám větší trvanlivost. Jako rozvojová technika poskytuje klientům komplexní a trvalé změny na hlubší úrovni. Lidské tělo je neoddělitelnou součástí všech životních změn, a proto dává smysl pozvat ho už do procesu jejich plánování.',
+          '<p>Koučování je technikou podpory lidí v jejich osobním růstu a při uskutečňování změn. <ul><li>Při koučinku podporuji klientovu/klientčinu odvahu, hledáme společně vnitřní zdroje a motivaci ke změně.</li> <li>Pomocí koučovacích otázek nastavuji jiný úhel pohledu na věc a společně odstraňujeme bariéry z cesty klientova/klientčina snažení.</li></ul> <p>Individuální somatické koučování ® je unikátní přístup, který používá kromě běžných koučovacích technik, oslovujících hlavně intelektuální úroveň, také práci se zdroji klienta na emocionální a tělesné úrovni. Tato metoda pracuje se všemi rovinami klientova života, díky tomu je komplexnější a dává změnám větší trvanlivost.</p><p> Jako rozvojová technika poskytuje klientům komplexní a trvalé změny na hlubší úrovni. Lidské tělo je neoddělitelnou součástí všech životních změn, a proto dává smysl pozvat ho už do procesu jejich plánování.</p><p><Zdroj: <a href="https://somatickekoucovani.cz" target="_blank">somatickekoucovani.cz</a></p>',
       },
       {
         header: 'Poradenství',
         message:
-          'Poradenství je odborná a specializovaná činnost zaměřená na pomoc lidem v nesnázích krátkodobého i dlouhodobého charakteru. Cílem v poradenské činnosti je dosáhnout změny. V rámci poradenství nabízím různá doporučení a edukaci v tématech, která klienta/klientku zajímají a ve kterých si nevědí rady.',
+          '<p>Poradenství je odborná a specializovaná činnost zaměřená na pomoc lidem v nesnázích krátkodobého i dlouhodobého charakteru.</p> <p>Cílem v poradenské činnosti je dosáhnout změny.</p> <p>V rámci poradenství nabízím různá doporučení a edukaci v tématech, která klienta/klientku zajímají a ve kterých si nevědí rady.</p>',
       },
       {
         header: 'Krizová intervence',
         message:
-          'Člověk se někdy může ocitnout v obtížné životní situaci a potřebuje akutní, jednorázovou či krátkodobou pomoc (1 až 5 setkání). Jedná se o pomoc v takové životní situaci, kde vlastní zdroje pro zvládání zátěže už nedostačují. Může se jednat o stavy vzniklé na základě náhlé nebo těžké životní události, traumatu, zvýšeného stresu nebo při propuknutí akutních psychických potíží. Krizová intervence se zaměřuje na zklidnění této situace a zvládnutí základních potíží. V krizové intervenci se zaměřuji na problém, ohnisko, spouštěč, podporu a řešení, a to v reálném čase &quot;tady a teď&quot;. Jejím hlavním cílem je stabilizace, uklidnění, podpora a alespoň částečné navrácení kontroly nad sebou samým a nad svým životem.',
+          '<p>Člověk se někdy může ocitnout v obtížné životní situaci a potřebuje akutní, jednorázovou či krátkodobou pomoc (1 až 5 setkání). Jedná se o pomoc v takové životní situaci, kde vlastní zdroje pro zvládání zátěže už nedostačují. Může se jednat o stavy vzniklé na základě náhlé nebo těžké životní události, traumatu, zvýšeného stresu nebo při propuknutí akutních psychických potíží.</p><p> Krizová intervence se zaměřuje na zklidnění této situace a zvládnutí základních potíží.</p> <p>V krizové intervenci se zaměřuji na problém, ohnisko, spouštěč, podporu a řešení, a to v reálném čase &quot;tady a teď&quot;.<p> <p>Jejím hlavním cílem je stabilizace, uklidnění, podpora a alespoň částečné navrácení kontroly nad sebou samým a nad svým životem.</p>',
       },
     ],
   },
@@ -85,6 +84,7 @@ const form = new Vue({
       contact: {
         name: '',
         email: '',
+        phone: '',
         message: '',
       },
       isHidden: true,
@@ -92,7 +92,12 @@ const form = new Vue({
   },
   methods: {
     submitForm: async function () {
-      console.log(this.contact.name, this.contact.email, this.contact.message);
+      console.log(
+        this.contact.name,
+        this.contact.email,
+        this.contact.phone,
+        this.contact.message
+      );
       try {
         let response = await axios.post(
           'http://localhost:4000/submit',

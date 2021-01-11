@@ -1,7 +1,9 @@
+Předělávky:
+- média (samostatný stránka?)
+
 Responsivní:
 
-- ceník do menu - pop up box u menu?
+- kontrola textů
 - SEO
-- google analytics
 - google tag manager
 - animace

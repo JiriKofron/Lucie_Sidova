@@ -1,0 +1,63 @@
+@use 'intro';
+
+.faq {
+  background-color: intro.$light-blue;
+  clip-path: polygon(0 2rem, 100% 0, 100% 100%, 0% 100%);
+  margin-top: -2rem;
+  padding-bottom: 5rem;
+  color: intro.$text-color;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+
+  h2 {
+    display: block;
+    width: 100%;
+    margin-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  hr {
+    border: 1px solid white;
+    width: 80%;
+  }
+
+  &__otazka {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    width: 25rem;
+
+    h3 {
+      font-family: intro.$raleway;
+      font-size: 1.8rem;
+      color: intro.$text-color;
+      margin: 1rem 0;
+    }
+
+    i {
+      color: intro.$gold;
+      font-size: 5rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      padding: 1rem;
+      margin: 0;
+      margin-left: 1.5rem;
+      max-width: 30rem;
+    }
+
+    ul {
+      li {
+        font-size: 1.3rem;
+        font-family: intro.$raleway;
+        line-height: 2rem;
+      }
+    }
+  }
+}

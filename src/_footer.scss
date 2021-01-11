@@ -10,17 +10,26 @@ footer {
   font-family: intro.$raleway;
   font-size: 1.3rem;
   width: 100%;
+  max-width: 95rem;
   position: relative;
   z-index: 50;
 
   @include intro.breakpoint(tablet) {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 3rem;
     padding-top: 4rem;
     p {
       margin: 0.2rem 0;
+    }
+  }
+
+  iframe {
+    display: none;
+
+    @include intro.breakpoint(laptop) {
+      display: block;
     }
   }
 
