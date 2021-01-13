@@ -17,20 +17,16 @@
     </script>
     <title>Lucie Šídová | psychoterapie, poradenství</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/flickity.css" />
     <link rel="stylesheet" href="vendor/css/all.css" />
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous"> -->
     <script
       type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"
+      src="https://cdn.jsdelivr.net/npm/vue@2"
     ></script>
-    <script type="text/javascript" src="vendor/flickity.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-
   <body>
     <nav class="navbar">
       <aside class="navbar__header">
@@ -124,18 +120,13 @@
           v-bind:header="item.header"
           v-bind:message="item.message"
         ></services-tile>
-        <!-- <service-message
-          v-for="item in items"
-          v-bind:key="item.id"
-          v-bind:message="item.message"
-        ></service-message> -->
       </section>
       <section class="kontakt" id="kontakt">
         <div class="kontakt__info">
           <p>
             <strong
-              >Kontaktovat mě můžete emailem, sms nebo přes kontaktní
-              formulář.</strong
+              >Kontaktovat mě můžete emailem, sms nebo prostřednictvím
+              kontaktního formuláře.</strong
             >
           </p>
         </div>
@@ -200,7 +191,7 @@
               class="g-recaptcha"
               data-sitekey="6Le4UgUaAAAAAMdkXFJcxMXewGzk57UbPGGKvjXt"
             ></div>
-            <button type="submit">Odeslat</button>
+            <button type="submit" v-on:click="buttonClicked">{{text}}</button>
           </div>
           <div class="kontakt__form__success" v-if="!isHidden">
             <h2>Děkuji!</h2>
@@ -224,7 +215,7 @@
           <ul>
             <li>Individuální terapie (50 min.) – 800 Kč</li>
             <li>Koučink (50 min) – 800 Kč</li>
-            <li>Krizová intervence, poradenství (50 min) - 800 Kč.</li>
+            <li>Krizová intervence, poradenství (50 min) - 800 Kč</li>
           </ul>
         </article>
         <article class="faq__otazka">
@@ -252,10 +243,10 @@
             Věnuji se individuální terapii, krizové intervenci, poradenství a
             somatickému koučování. Pracuji především s dospělými lidmi. Ve své
             práci využívám zejména metodu Biosyntézy a psychodynamický přístup.
-            Věnuji se různým tématům jako jsou např. osobní rozvoj a růst,
-            náročné životní situace, traumatické zkušenosti, partnerské vztahy,
-            rodinné problémy, sexualita, či tématům spojeným s domácím a
-            sexuálním násilím.
+            Věnuji se různým tématům jako jsou osobní rozvoj a růst, náročné
+            životní situace, traumatické zkušenosti, partnerské vztahy, rodinné
+            problémy, sexualita, či tématům spojeným s domácím a sexuálním
+            násilím.
           </p>
           <p>
             Jako lektorka přednáším téma sexuality lidí s hendikepem, seniorů a
@@ -267,7 +258,7 @@
             rodičům či sourozencům dětí se znevýhodněním.
           </p>
           <p>Jsem členkou Českého institutu biosyntézy.</p>
-          <p>Pracuji pod supervizí MUDr. Aleny Procházkové - Večeřové.</p>
+          <p>Pracuji pod supervizí MUDr. Aleny Procházkové-Večeřové.</p>
         </article>
         <div class="about__container">
           <article class="about__container__terapie">
@@ -303,7 +294,7 @@
             <ul>
               <li>
                 <span>2016 – doposud </span>
-                <strong>Spoluzakladatelka organizace Freya, z. s.</strong> –
+                <strong>Spoluzakladatelka organizace Freya, z. s.</strong>
                 lektorka, psychoterapeutka, koučka – nezisková organizace
                 zabývající se tématem sexuality a vztahů u lidí se
                 znevýhodněním, seniorů a seniorek.
@@ -320,7 +311,7 @@
               </li>
               <li>
                 <span>2008 – 2016 </span
-                ><strong>Rozkoš bez Rizika, z. s.,</strong> Nezisková organizace
+                ><strong>Rozkoš bez Rizika, z. s.</strong> Nezisková organizace
                 pracující se ženami ze sexbyznysu. Výkonná ředitelka,
                 terapeutka, streetworkerka.
               </li>
@@ -353,6 +344,5 @@
       </article>
     </footer>
     <script type="module" src="index.js"></script>
-    <script src="flickity.js"></script>
   </body>
 </html>

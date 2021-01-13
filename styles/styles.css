@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -54,12 +58,22 @@ body {
   margin: 0;
   padding: 0;
 }
+@media (min-width: 850px) {
+  .navbar__header h1 {
+    font-size: 3.5rem;
+  }
+}
 .navbar__header h2 {
   font-family: "Raleway";
   font-size: 0.7rem;
   color: #145c5c;
   margin: 0.1rem 0;
   padding: 0;
+}
+@media (min-width: 850px) {
+  .navbar__header h2 {
+    font-size: 1rem;
+  }
 }
 .navbar__menu {
   display: none;
@@ -85,6 +99,12 @@ body {
   .navbar__menu__item {
     padding: 0 1rem;
   }
+}
+.navbar__menu__item:hover {
+  transform: scale(1.2);
+}
+.navbar__menu__item a:hover {
+  color: #cc85bb;
 }
 
 .navbar--small {
@@ -158,8 +178,10 @@ body {
 }
 .intro__background_video {
   width: 100%;
+  height: 100%;
   display: none;
   position: fixed;
+  object-fit: cover;
 }
 @media (min-width: 850px) {
   .intro__background_video {
@@ -175,6 +197,7 @@ main {
   width: 100%;
   position: relative;
   z-index: 20;
+  scroll-behavior: smooth;
 }
 @media (min-width: 850px) {
   main {
@@ -453,6 +476,9 @@ main section.services .services__tile__details li {
   margin: 2rem 0 1rem 1rem;
   color: #145c5c;
 }
+.kontakt__form__container__field :focus {
+  box-shadow: 0px 0px 5px 4px #cc85bb;
+}
 .kontakt__form__container__field label {
   align-self: flex-start;
   margin-bottom: 0.5rem;
@@ -490,6 +516,16 @@ main section.services .services__tile__details li {
   padding: 0.5rem 0;
   border: 0;
   margin-top: 1rem;
+}
+.kontakt__form button:hover {
+  transform: scale(1.1);
+  background-color: transparent;
+  border: 1px solid #cc85bb;
+  color: #cc85bb;
+}
+.kontakt__form button:active {
+  background-color: #cc85bb;
+  color: white;
 }
 .kontakt__form__success {
   display: flex;

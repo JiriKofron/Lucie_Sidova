@@ -7,6 +7,7 @@ main {
   width: 100%;
   position: relative;
   z-index: 20;
+  scroll-behavior: smooth;
 
   @include intro.breakpoint(laptop) {
     max-width: 95rem;

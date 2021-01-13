@@ -91,6 +91,10 @@
         margin: 2rem 0 1rem 1rem;
         color: intro.$text-color;
 
+        :focus {
+          box-shadow: 0px 0px 5px 4px intro.$dark-pink;
+        }
+
         label {
           align-self: flex-start;
           margin-bottom: 0.5rem;
@@ -134,6 +138,18 @@
       padding: 0.5rem 0;
       border: 0;
       margin-top: 1rem;
+
+      &:hover {
+        transform: scale(1.1);
+        background-color: transparent;
+        border: 1px solid intro.$dark-pink;
+        color: intro.$dark-pink;
+      }
+
+      &:active {
+        background-color: intro.$dark-pink;
+        color: white;
+      }
     }
 
     &__success {

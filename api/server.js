@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mailer = require('./mailer');
+const helmet = require('helmet');
 
 const app = express();
 
 app.use(cors());
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -17,10 +19,10 @@ app.post('/submit', async (req, res) => {
   try {
     let name = req.body.name;
     let email = req.body.email;
-    let phome = req.body.phone;
+    let phone = req.body.phone;
     let message = req.body.message;
-    console.log(name, email, phone, message);
-    console.log(req.body);
+    // console.log(name, email, phone, message);
+    // console.log(req.body);
     mailer(name, email, phone, message);
     res.sendStatus(200);
   } catch {

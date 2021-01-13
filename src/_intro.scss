@@ -32,6 +32,10 @@ $text-color: #145c5c;
 $dancing: 'Dancing script';
 $raleway: 'Raleway';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -86,6 +90,10 @@ body {
       font-size: 2.5rem;
       margin: 0;
       padding: 0;
+
+      @include breakpoint(laptop) {
+        font-size: 3.5rem;
+      }
     }
 
     h2 {
@@ -94,6 +102,9 @@ body {
       color: $text-color;
       margin: 0.1rem 0;
       padding: 0;
+      @include breakpoint(laptop) {
+        font-size: 1rem;
+      }
     }
   }
 
@@ -118,6 +129,14 @@ body {
 
       @include breakpoint(tablet) {
         padding: 0 1rem;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      a:hover {
+        color: $dark-pink;
       }
     }
   }
@@ -197,8 +216,10 @@ body {
 
   &__background_video {
     width: 100%;
+    height: 100%;
     display: none;
     position: fixed;
+    object-fit: cover;
 
     @include breakpoint(laptop) {
       display: flex;
