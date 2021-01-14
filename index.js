@@ -92,12 +92,12 @@ const form = new Vue({
   },
   methods: {
     submitForm: async function () {
-      console.log(
-        this.contact.name,
-        this.contact.email,
-        this.contact.phone,
-        this.contact.message
-      );
+      // console.log(
+      //   this.contact.name,
+      //   this.contact.email,
+      //   this.contact.phone,
+      //   this.contact.message
+      // );
       try {
         async function createInbox() {
           return await axios
@@ -120,10 +120,7 @@ const form = new Vue({
             Telefon: ${this.contact.phone}
             Zpráva: ${this.contact.message}`,
           },
-          charset: 'utf8',
-          html: true,
         });
-        console.log(response);
         this.contact = '';
         this.isHidden = false;
       } catch (err) {

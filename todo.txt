@@ -1,9 +1,11 @@
 Předělávky:
 - média (samostatný stránka?)
 
-Responsivní:
-
-- kontrola textů
+Dodělat:
+- recapcha!!!
+- zrychlení, zlepšení statistik
+- vyhledávač google a seznam
+- google analytics
 - SEO
 - google tag manager
 - animace
