@@ -85,6 +85,7 @@ const form = new Vue({
         email: '',
         phone: '',
         message: '',
+        trap: '',
       },
       isHidden: true,
       text: 'Odeslat',
@@ -99,30 +100,34 @@ const form = new Vue({
       //   this.contact.message
       // );
       try {
-        async function createInbox() {
-          return await axios
-            .post(
-              `https://api.mailslurp.com/createInbox?apiKey=f807843bd23c67e2aa6e368c7f3d0d23eb8f674942b2d7932858d274a2d9b0f5`
-            )
-            .then((res) => res.data);
-        }
-        const inbox = await createInbox();
-        let response = await axios({
-          method: 'POST',
-          url:
-            'https://api.mailslurp.com/sendEmail?apiKey=f807843bd23c67e2aa6e368c7f3d0d23eb8f674942b2d7932858d274a2d9b0f5',
-          data: {
-            senderId: inbox.id,
-            to: 'coffi@seznam.cz',
-            subject: 'Zpráva z webu luciesidova.cz',
-            body: `Od:${this.contact.name}
+        if (this.contact.trap === '') {
+          async function createInbox() {
+            return await axios
+              .post(
+                `https://api.mailslurp.com/createInbox?apiKey=f807843bd23c67e2aa6e368c7f3d0d23eb8f674942b2d7932858d274a2d9b0f5`
+              )
+              .then((res) => res.data);
+          }
+          const inbox = await createInbox();
+          let response = await axios({
+            method: 'POST',
+            url:
+              'https://api.mailslurp.com/sendEmail?apiKey=f807843bd23c67e2aa6e368c7f3d0d23eb8f674942b2d7932858d274a2d9b0f5',
+            data: {
+              senderId: inbox.id,
+              to: 'coffi@seznam.cz',
+              subject: 'Zpráva z webu luciesidova.cz',
+              body: `Od:${this.contact.name}
             Email: ${this.contact.email}
             Telefon: ${this.contact.phone}
             Zpráva: ${this.contact.message}`,
-          },
-        });
-        this.contact = '';
-        this.isHidden = false;
+            },
+          });
+          this.contact = '';
+          this.isHidden = false;
+        } else {
+          console.log('tahni bote!');
+        }
       } catch (err) {
         console.log(err);
       }

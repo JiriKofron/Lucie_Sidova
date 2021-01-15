@@ -160,6 +160,13 @@
           id="form"
         >
           <div class="kontakt__form__container" v-if="isHidden">
+            <input
+              type="hidden"
+              value=""
+              id="trap"
+              name="trap"
+              v.model="contact.trap"
+            />
             <div class="kontakt__form__container__field">
               <label for="name">Jméno</label>
               <input

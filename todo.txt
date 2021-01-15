@@ -3,6 +3,7 @@ Předělávky:
 
 Dodělat:
 - recapcha!!!
+- meta head vlastnosti
 - zrychlení, zlepšení statistik
 - vyhledávač google a seznam
 - google analytics
