@@ -167,7 +167,7 @@ body {
   position: relative;
   height: 75vh;
   width: 100%;
-  background: no-repeat url("../src/img/Background_still_sm2.png");
+  background: no-repeat url("../src/img/Background_still_sm2.webp");
   background-size: cover;
 }
 @media (min-width: 850px) {

@@ -88,7 +88,7 @@ const form = new Vue({
         trap: '',
       },
       isHidden: true,
-      text: 'Odeslat',
+      text: 'Odeslat dotaz',
     };
   },
   methods: {
@@ -115,7 +115,7 @@ const form = new Vue({
               'https://api.mailslurp.com/sendEmail?apiKey=f807843bd23c67e2aa6e368c7f3d0d23eb8f674942b2d7932858d274a2d9b0f5',
             data: {
               senderId: inbox.id,
-              to: 'coffi@seznam.cz',
+              to: 'sidova@freya.live',
               subject: 'Zpráva z webu luciesidova.cz',
               body: `Od:${this.contact.name}
             Email: ${this.contact.email}

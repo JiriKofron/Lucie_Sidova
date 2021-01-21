@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Lucie Šídová | psychoterapie, poradenství Praha</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
+      src="https://www.googletagmanager.com/gtag/js?id=UA-148345268-2"
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2NGFF6PRJ8"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,30 +16,36 @@
       }
       gtag('js', new Date());
 
-      gtag('config', 'G-2NGFF6PRJ8');
+      gtag('config', 'UA-148345268-2');
     </script>
-    <title>Lucie Šídová | psychoterapie, poradenství</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="vendor/css/all.css" />
+    <link rel="stylesheet" rel="preload" href="vendor/css/all.css" />
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/vue@2"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      defer
+    ></script>
+    <link rel="canonical" href="https://luciesidova.cz" />
     <meta
       property="og:title"
-      content="Lucie Šídová | psychoterapie | poradenství | koučink "
+      content="Lucie Šídová | psychoterapie, poradenství, koučink "
     />
     <meta
       property="og:image"
       content="https://www.luciesidova.cz/src/img/Background_still_sm2.png"
     />
+    <meta property="og:url" content="https://luciesidova.cz/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Pracuji jako terapeutka a koučka v Praze. Nabízím terapeutické služby, koučink, poradenství a krizovou intervenci. Pomohu Vám v různých životních situacích."
+    />
     <meta
       name="description"
-      content="Pracuji jako terapeutka a koučka. Nabízím terapeutické služby, koučink, poradenství a krizovou intervenci. Pomohu Vám v různých životních situacích."
+      content="Pracuji jako terapeutka a koučka v Praze. Nabízím terapeutické služby, koučink, poradenství a krizovou intervenci. Pomohu Vám v různých životních situacích."
     />
   </head>
   <body>
@@ -86,14 +95,14 @@
     </nav>
 
     <header class="intro">
-      <video
-        class="intro__background_video"
-        autoplay
-        muted
-        loop
-        src="src/vid/Background_video_compres.mp4"
-        type="video/mp4"
-      ></video>
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/LCsRuPYJVXY?controls=0"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </header>
     <main>
       <section class="text">
@@ -177,7 +186,6 @@
                 required
               />
             </div>
-
             <div class="kontakt__form__container__field">
               <label for="email">Email</label>
               <input
@@ -206,10 +214,6 @@
                 v-model="contact.message"
               ></textarea>
             </div>
-            <div
-              class="g-recaptcha"
-              data-sitekey="6Le4UgUaAAAAAMdkXFJcxMXewGzk57UbPGGKvjXt"
-            ></div>
             <button type="submit" v-on:click="buttonClicked">{{text}}</button>
           </div>
           <div class="kontakt__form__success" v-if="!isHidden">
@@ -256,7 +260,16 @@
       </section>
       <section class="about" id="about">
         <h2>O mně</h2>
-        <img src="./src/img/FOTO_Lucie_Sidova2.png" />
+        <img
+          src="./src/img/Lucie_Sidova_lg.webp"
+          alt="Portrait of the owner
+        Lucie Sidova"
+          srcset="
+            ./src/img/Lucie_Sidova_sm.webp 500w,
+            ./src/img/Lucie_Sidova_lg.webp 700w
+          "
+          loading="lazy"
+        />
         <article class="about__about">
           <p>
             Věnuji se individuální terapii, krizové intervenci, poradenství a
@@ -358,6 +371,7 @@
         allowfullscreen=""
         aria-hidden="false"
         tabindex="0"
+        loading="lazy"
       ></iframe>
       <article class="footer__details">
         <p>lucie.sidova@gmail.com</p>
@@ -365,6 +379,6 @@
         <p>&#169; Lucie Šídová 2021</p>
       </article>
     </footer>
-    <script type="module" src="index.js"></script>
+    <script type="module" src="index.js" async></script>
   </body>
 </html>

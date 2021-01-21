@@ -2,11 +2,6 @@ Předělávky:
 - média (samostatný stránka?)
 
 Dodělat:
-- recapcha!!!
-- meta head vlastnosti
-- zrychlení, zlepšení statistik
-- vyhledávač google a seznam
-- google analytics
-- SEO
-- google tag manager
+- vyhledávač seznam
 - animace
+- vlastní ikony do FAQ kvůli rychlosti
