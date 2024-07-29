@@ -460,6 +460,8 @@ main section.services .services__tile__details li {
   flex-direction: column;
   justify-content: center;
   margin-top: 1rem;
+  width: 100%;
+  max-width: 30rem;
 }
 .kontakt__form__container {
   display: flex;

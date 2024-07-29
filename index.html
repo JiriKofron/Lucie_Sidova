@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="cz">
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2NGFF6PRJ8"
-    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E9D6N1ZRBZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-2NGFF6PRJ8');
+      gtag('config', 'G-E9D6N1ZRBZ');
     </script>
     <title>Lucie Šídová | psychoterapie, poradenství</title>
     <link rel="stylesheet" href="styles/styles.css" />
@@ -22,8 +17,8 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/vue@2"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+    <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -153,19 +148,25 @@
           </div>
         </address>
         <form
-          action="/submit"
-          @submit.prevent="submitForm"
+          action="https://api.web3forms.com/submit"
           method="post"
           class="kontakt__form"
           id="form"
         >
           <div class="kontakt__form__container" v-if="isHidden">
             <input
-              type="hidden"
+                type="hidden"
+                name="access_key"
+                value="7190bf98-4295-4bc1-9e08-0357b0c3ab07"
+            />
+            <input
+              style="display: none"
+              class="hidden"
+              type="checkbox"
               value=""
               id="trap"
-              name="trap"
-              v.model="contact.trap"
+              name="botcheck"
+              v-model="contact.trap"
             />
             <div class="kontakt__form__container__field">
               <label for="name">Jméno</label>
@@ -191,7 +192,7 @@
             <div class="kontakt__form__container__field">
               <label for="phone">Telefon</label>
               <input
-                type="phone"
+                type="tel"
                 id="phone"
                 name="phone"
                 v-model="contact.phone"
@@ -200,17 +201,16 @@
             <div class="kontakt__form__container__field">
               <label for="message">S čím Vám mohu pomoci</label>
               <textarea
-                type="text"
                 id="message"
                 name="message"
                 v-model="contact.message"
               ></textarea>
             </div>
-            <div
+            <!--<div
               class="g-recaptcha"
               data-sitekey="6Le4UgUaAAAAAMdkXFJcxMXewGzk57UbPGGKvjXt"
-            ></div>
-            <button type="submit" v-on:click="buttonClicked">{{text}}</button>
+            ></div>-->
+            <button type="submit">{{text}}</button>
           </div>
           <div class="kontakt__form__success" v-if="!isHidden">
             <h2>Děkuji!</h2>
@@ -232,9 +232,9 @@
           <i class="fas fa-coins"></i>
           <h3>Cena sezení</h3>
           <ul>
-            <li>Individuální terapie (50 min.) – 800 Kč</li>
-            <li>Koučink (50 min) – 800 Kč</li>
-            <li>Krizová intervence, poradenství (50 min) - 800 Kč</li>
+            <li>Individuální terapie (50 min.) – 1200 Kč</li>
+            <li>Koučink (50 min) – 1200 Kč</li>
+            <li>Krizová intervence, poradenství (50 min) - 1200 Kč</li>
           </ul>
         </article>
         <article class="faq__otazka">
@@ -256,7 +256,14 @@
       </section>
       <section class="about" id="about">
         <h2>O mně</h2>
-        <img src="./src/img/FOTO_Lucie_Sidova2.png" />
+        <img src="./src/img/Lucie_Sidova_lg.webp"
+             alt="Portrait of the owner
+        Lucie Sidova"
+             srcset="
+            ./src/img/Lucie_Sidova_sm.webp 500w,
+            ./src/img/Lucie_Sidova_lg.webp 700w
+          "
+             loading="lazy" />
         <article class="about__about">
           <p>
             Věnuji se individuální terapii, krizové intervenci, poradenství a
@@ -341,8 +348,7 @@
     </main>
     <footer>
       <address>
-        <p>Palác YMCA</p>
-        <p>Na Poříčí 12</p>
+        <p>Bolzanova 1</p>
         <p>Praha 1, 110 00,</p>
         <p>2. patro, zvonek Freya.</p>
         <hr />
@@ -350,6 +356,7 @@
         <p>Číslo účtu: 2301855634/2010</p>
       </address>
       <iframe
+        title="Google map of the psychotherapy room"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.849499436762!2d14.429152316016445!3d50.08910457942721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94eab4f43d47%3A0x34d10961574ff650!2sPalace%20YMCA%2C%20Ltd.!5e0!3m2!1sen!2scz!4v1610582512215!5m2!1sen!2scz"
         width="400"
         height="280"
@@ -358,11 +365,12 @@
         allowfullscreen=""
         aria-hidden="false"
         tabindex="0"
+        loading="lazy"
       ></iframe>
       <article class="footer__details">
         <p>lucie.sidova@gmail.com</p>
         <p>+420 777 028 028</p>
-        <p>&#169; Lucie Šídová 2021</p>
+        <p>&#169; Lucie Šídová 2024</p>
       </article>
     </footer>
     <script type="module" src="index.js"></script>
